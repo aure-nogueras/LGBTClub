@@ -34,7 +34,7 @@ En la ventana desplegada, he pegado la clave pública.
 
 Desde los ajustes de *GitHub*, también he accedodo a *Account security* para activar el segundo factor de autenticación. Esto permite incrementar la seguridad de la cuenta, solicitando una segunda clave que se manda en un *sms* a mi teléfono móvil cada vez que inicio sesión en *GitHub* desde un nuevo dispositivo.
 
-![Doble autenticación](./imgs/autenticacion.png "Doble autenticación")
+![Doble autenticación](./imgs/authentication.png "Doble autenticación")
 
 ### Configuración git local
 
