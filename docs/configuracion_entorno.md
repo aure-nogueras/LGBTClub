@@ -51,3 +51,21 @@ Así, los *commits* usarán esta información cuando sean enviados. Además, he 
 Por último, a la hora de hacer `fork` en el repositorio [*CC-20-21*](https://github.com/JJ/CC-20-21) y clonarlo, he configurado el remoto en mi ordenador del siguiente modo:
 
 `git remote add upstream git@github.com:JJ/CC-20-21.git`
+
+### GitHub Pages
+
+La creación de una página web a partir del [repositorio del proyecto](https://github.com/aure-nogueras/ProyectoCC) se ha realizado de la siguiente manera. En primer lugar, hay que acceder a los *settings* del repositorio. Una vez ahí, hay que configurar la sección correspondiente a *GitHub Pages*. 
+
+![GitHub Pages](./imgs/pages.png "GitHub Pages")
+
+Una vez elegida la rama desde la que desplegar la web y el tema, ya estará disponible el enlace para acceder a la [página](https://aure-nogueras.github.io/ProyectoCC/).
+
+### Repositorios creados para la asignatura
+
+He creado tres repositorios:
+
+- [Ejercicios de la asignatura](https://github.com/aure-nogueras/EjerciciosCC).
+- [Proyecto](https://github.com/aure-nogueras/ProyectoCC).
+- [Fork](https://github.com/aure-nogueras/CC-20-21) del [repositorio original](https://github.com/JJ/CC-20-21).
+
+
