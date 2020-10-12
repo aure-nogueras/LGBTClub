@@ -6,11 +6,11 @@
 
 En primer lugar, he accedido a mi perfil y he completado los datos que faltaban: nombre completo, ciudad, universidad e icono con mi foto.
 
-![Datos del perfil de GitHub](../imgs/datos.png "Datos del perfil de GitHub")
+![Datos del perfil de GitHub](./imgs/datos.png "Datos del perfil de GitHub")
 
 De este modo, el resultado del perfil ha quedado así.
 
-![Imagen del perfil de GitHub](../imgs/perfil.png "Perfil de GitHub")
+![Imagen del perfil de GitHub](./imgs/perfil.png "Perfil de GitHub")
 
 ### Generación de claves
 
@@ -24,23 +24,24 @@ Una vez guardadas las claves y creado una *passphrase*, he copiado la clave púb
 
 Después he accedido a *GitHub* y he pinchado en *Settings*. Dentro de la opción *SSH and GPG keys*, le he dado a añadir una nueva clave *SSH*.
 
-![Nueva SSH key](../imgs/ssh.png "Nueva SSH key")
+![Nueva SSH key](./imgs/ssh.png "Nueva SSH key")
 
 En la ventana desplegada, he pegado la clave pública.
 
-![SSH key](../imgs/new_ssh.png "SSH key")
+![SSH key](./imgs/new_ssh.png "SSH key")
 
 ### Doble autenticación
 
 Desde los ajustes de *GitHub*, también he accedodo a *Account security* para activar el segundo factor de autenticación. Esto permite incrementar la seguridad de la cuenta, solicitando una segunda clave que se manda en un *sms* a mi teléfono móvil cada vez que inicio sesión en *GitHub* desde un nuevo dispositivo.
 
-![Doble autenticación](../imgs/autenticacion.png "Doble autenticación")
+![Doble autenticación](./imgs/autenticacion.png "Doble autenticación")
 
 ### Configuración git local
 
 Para establecer mi nombre de usuario y mi email desde la terminal, he utilizado:
 
 `git config --global user.name "aure-nogueras"`
+
 `git config --global user.email "anogueras@correo.ugr.es"`
 
 Así, los *commits* usarán esta información cuando sean enviados. Además, he añadido que `git pull` siempre sea `rebase`.
