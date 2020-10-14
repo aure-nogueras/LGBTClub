@@ -11,3 +11,13 @@ Actualmente, aún existen muchos espacios que no son seguros para las personas L
 ## Documentación
 
 La documentación se ubicará en el directorio [docs](https://github.com/aure-nogueras/ProyectoCC/tree/main/docs). Por ahora, la configuración inicial del entorno para comenzar el desarrollo del proyecto se encuentra [aquí](https://github.com/aure-nogueras/ProyectoCC/blob/main/docs/configuracion_entorno.md).
+
+## Milestones e issues resueltos
+
+- [Documentación](https://github.com/aure-nogueras/LGBTClub/milestone/2)
+   - [Incluir documentación de configuración de GitHub](https://github.com/aure-nogueras/LGBTClub/issues/2)
+- [Configuración básica del repositorio](https://github.com/aure-nogueras/LGBTClub/milestone/1)
+   - [Añadir GitHub Pages](https://github.com/aure-nogueras/LGBTClub/issues/3)
+   - [Terminar configuración inicial del repositorio](https://github.com/aure-nogueras/LGBTClub/issues/1)
+- [Solucionar errores](https://github.com/aure-nogueras/LGBTClub/milestone/4)
+   - [Arreglar errores del hito 0](https://github.com/aure-nogueras/LGBTClub/issues/4)
