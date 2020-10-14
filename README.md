@@ -1,4 +1,4 @@
-# ProyectoCC
+# LGBTClub
 
 Proyecto de la asignatura *Cloud Computing* del Máster de Ingeniería Informática de la UGR. Curso 2020-2021.
 
@@ -6,7 +6,7 @@ Proyecto de la asignatura *Cloud Computing* del Máster de Ingeniería Informát
 
 ## Descripción del problema
 
-Actualmente, aún existen muchos espacios que no son seguros para las personas LGTB. Se pretende crear una asociación a la que puedan unirse tanto personas del colectivo como personas interesadas en aprender más sobre el mismo. De este modo, se quiere establecer un lugar de encuentro donde puedan gestionarse eventos y actividades divulgativas. Además, quiere contribuirse a educar a la gente en este ámbito para acabar con el odio y el desconocimiento.
+Actualmente, aún existen muchos espacios que no son seguros para las personas LGTB. Uno de los principales motivos es la falta de educación en este ámbito. Se pretende crear una asociación virtual a la que puedan unirse tanto personas del colectivo como personas interesadas en aprender más sobre el mismo. De este modo, se quiere enviar información a los miembros sobre términos, eventos históricos o días señalados. Esto contribuirá a la formación y la creación de conciencia en estos aspectos para acabar con el odio y el desconocimiento.
 
 ## Documentación
 
