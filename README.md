@@ -20,4 +20,4 @@ La documentación se ubicará en el directorio [docs](https://github.com/aure-no
    - [Añadir GitHub Pages](https://github.com/aure-nogueras/LGBTClub/issues/3)
    - [Terminar configuración inicial del repositorio](https://github.com/aure-nogueras/LGBTClub/issues/1)
 - [Solucionar errores](https://github.com/aure-nogueras/LGBTClub/milestone/4)
-   - [Arreglar errores del hito 0](https://github.com/aure-nogueras/LGBTClub/issues/4)
+   - [Arreglar errores iniciales](https://github.com/aure-nogueras/LGBTClub/issues/4)
