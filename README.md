@@ -6,7 +6,31 @@ Proyecto de la asignatura *Cloud Computing* del Máster de Ingeniería Informát
 
 ## Descripción del problema
 
-Actualmente, aún existen muchos espacios que no son seguros para las personas LGTB. Uno de los principales motivos es la falta de educación en este ámbito. Se pretende crear una asociación virtual a la que puedan unirse tanto personas del colectivo como personas interesadas en aprender más sobre el mismo. De este modo, se quiere enviar información a los miembros sobre términos, eventos históricos o días señalados. Esto contribuirá a la formación y la creación de conciencia en estos aspectos para acabar con el odio y el desconocimiento.
+Actualmente, aún existen muchos espacios que no son seguros para las personas LGTB. Uno de los principales motivos es la falta de educación en este ámbito. Se pretende crear un canal de mensajería para que cualquier persona pueda suscribirse y recibir información periódica de distinta índole sobre el colectivo. De este modo, se incluirán eventos históricos, fechas señaladas, relatos personales o explicaciones de algunos términos. Además, los propios usuarios podrán contribuir a la expansión de los datos almacenados.
+
+Esto ayudará a crear una sociedad más formada en diversidad sexual, que pueda ir destruyendo tabúes y acepte con total naturalidad cualquier tipo de orientación sexual, expresión o identidad de género.
+
+
+## Arquitectura del problema
+
+Para abordar el problema se ha elegido una arquitectura basada en microservicios. De este modo, se desplegarán tres microservicios.
+
+- **UserManagement**: se encargará de la gestión de los usuarios. Sus funciones serán:
+	- Suscribirse al servicio de mensajería.
+	- Desuscribirse del servicio de mensajería.
+	- Añadir eventos históricos.
+	- Modificar eventos históricos añadidos.
+	- Eliminar eventos históricos añadidos.
+	- Añadir experiencias personales o información.
+	- Modificar experiencias personales o información añadida.
+	- Eliminar experiencias personales o información añadida.
+- **HistoricalEvents**: gestiona los eventos históricos y las fechas señaladas para el colectivo.
+	- Proporcionar información sobre eventos históricos o días señalados.
+- **InfoAndExperiences**: gestiona la información sobre los términos, las experiencias personales y los falsos mitos del colectivo.
+	- Proporcionar información sobre terminología y experiencias personales.
+	
+Para comunicar los servicios se utilizará una *API-GATEWAY*.
+
 
 ## Documentación
 
