@@ -2,3 +2,4 @@ entidad:
 - src/UserManagement/User.js
 - src/HistoricalEvent/HistoricalEvent.js
 - src/InfoAndExperiences/InfoAndExperiences.js
+
