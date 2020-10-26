@@ -56,6 +56,8 @@ La documentación se ubicará en el directorio [docs](https://github.com/aure-no
 - [Solucionar errores](https://github.com/aure-nogueras/LGBTClub/milestone/4)
    - [Arreglar errores iniciales](https://github.com/aure-nogueras/LGBTClub/issues/4)
    - [Modificar descripción del problema](https://github.com/aure-nogueras/LGBTClub/issues/29)
+   - [Arreglar sintaxis de cc.yaml](https://github.com/aure-nogueras/LGBTClub/issues/33)
+   - [Arreglar error en estructura de clases](https://github.com/aure-nogueras/LGBTClub/issues/34)
 - [Integración continua](https://github.com/aure-nogueras/LGBTClub/milestone/5)
    - [Añadir travis.yml](https://github.com/aure-nogueras/LGBTClub/issues/5)
    - [Incluir repositorio en Travis](https://github.com/aure-nogueras/LGBTClub/issues/6)

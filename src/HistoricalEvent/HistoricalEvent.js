@@ -10,43 +10,11 @@ class HistoricalEvent{
 	}
 	
 	getName(){
-		return this.name;
+		return true;
 	}
 	
-	getDay(){
-		return this.day;
-	}
-	
-	getMonth(){
-		return this.month;
-	}
-	
-	getYear(){
-		return this.year;
-	}
-	
-	getDescription(){
-		return this.description;
-	}
-	
-	setName(name){
-		this.name = name;
-	}
-	
-	setDay(day){
-		this.day = day;
-	}
-	
-	setMonth(month){
-		this.month = month;
-	}
-	
-	setYear(year){
-		this.year = year;
-	}
-	
-	setDescription(description){
-		this.description = description;
+	setName(){
+		return true;
 	}
 	
 }

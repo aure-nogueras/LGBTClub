@@ -7,19 +7,11 @@ class InfoAndExperiences{
 	}
 	
 	getName(){
-		return this.name;
-	}
-	
-	getDescription(){
-		return this.description;
+		return true;
 	}
 	
 	setName(name){
-		this.name = name;
-	}
-	
-	setDescription(description){
-		this.description = description;
+		return true;
 	}
 	
 }

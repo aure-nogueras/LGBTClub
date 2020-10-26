@@ -8,26 +8,11 @@ class User{
 	}
 	
 	getName(){
-		return this.name;
-	}
-	
-	getEmail(){
-		return this.email;
-	}
-	
-	getLgtb(){
-		return this.lgtb;
+		return true;
 	}
 	
 	setName(name){
-		this.name = name;
+		return true;
 	}
 	
-	setEmail(email){
-		this.email = email;
-	}
-	
-	setLgtb(lgtb){
-		this.lgtb = lgtb;
-	}
 }
