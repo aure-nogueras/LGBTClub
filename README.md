@@ -4,16 +4,13 @@ Proyecto de la asignatura *Cloud Computing* del Máster de Ingeniería Informát
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-## Descripción del problema
+La descripción del problema se puede consultar [aquí](https://aure-nogueras.github.io/LGBTClub/docs/descripcion_problema).
 
-Actualmente, aún existen muchos espacios que no son seguros para las personas LGTB. Uno de los principales motivos es la falta de educación en este ámbito. Se pretende crear un canal de mensajería para que cualquier persona pueda suscribirse y recibir información periódica de distinta índole sobre el colectivo. De este modo, se incluirán eventos históricos, fechas señaladas, relatos personales o explicaciones de algunos términos. Además, los propios usuarios podrán contribuir a la expansión de los datos almacenados.
-
-Esto ayudará a crear una sociedad más formada en diversidad sexual, que pueda ir destruyendo tabúes y acepte con total naturalidad cualquier tipo de orientación sexual, expresión o identidad de género.
-
+El plan de desarrollo se puede ver [aquí](https://github.com/aure-nogueras/LGBTClub/projects/1).
 
 ## Arquitectura del problema
 
-Para abordar el problema se ha elegido una arquitectura basada en microservicios. De este modo, se desplegarán tres microservicios.
+Para abordar el problema se ha elegido una arquitectura basada en microservicios, ya que van a desplegarse tres funcionalidades independientes. Dichos microservicios son:
 
 - **UserManagement**: se encargará de la gestión de los usuarios. Sus funciones serán:
 	- Suscribirse al servicio de mensajería.
@@ -31,17 +28,38 @@ Para abordar el problema se ha elegido una arquitectura basada en microservicios
 	
 Para comunicar los servicios se utilizará una *API-GATEWAY*.
 
+El resto de herramientas elegidas se especifica [aquí](https://aure-nogueras.github.io/LGBTClub/docs/eleccion_herramientas).
+
+![Arquitectura](./docs/imgs/Arquitectura.png "Arquitectura basada en microservicios")
+
 
 ## Documentación
 
-La documentación se ubicará en el directorio [docs](https://github.com/aure-nogueras/ProyectoCC/tree/main/docs). Por ahora, la configuración inicial del entorno para comenzar el desarrollo del proyecto se encuentra [aquí](https://github.com/aure-nogueras/ProyectoCC/blob/main/docs/configuracion_entorno.md).
+La documentación se ubicará en el directorio [docs](https://github.com/aure-nogueras/ProyectoCC/tree/main/docs). 
+- [Configuración inicial del entorno para comenzar el desarrollo del proyecto](https://aure-nogueras.github.io/LGBTClub/docs/configuracion_entorno).
+- [Elección de herramientas](https://aure-nogueras.github.io/LGBTClub/docs/eleccion_herramientas).
+- [Descripción del problema](https://aure-nogueras.github.io/LGBTClub/docs/descripcion_problema).
+- [Creación de las primeras clases](https://aure-nogueras.github.io/LGBTClub/docs/primeras_clases).
 
 ## Milestones e issues resueltos
 
 - [Documentación](https://github.com/aure-nogueras/LGBTClub/milestone/2)
    - [Incluir documentación de configuración de GitHub](https://github.com/aure-nogueras/LGBTClub/issues/2)
+   - [Incluir documentación sobre herramientas elegidas](https://github.com/aure-nogueras/LGBTClub/issues/11)
+   - [Mover descripción del problema del readme a docs](https://github.com/aure-nogueras/LGBTClub/issues/30)
 - [Configuración básica del repositorio](https://github.com/aure-nogueras/LGBTClub/milestone/1)
    - [Añadir GitHub Pages](https://github.com/aure-nogueras/LGBTClub/issues/3)
    - [Terminar configuración inicial del repositorio](https://github.com/aure-nogueras/LGBTClub/issues/1)
 - [Solucionar errores](https://github.com/aure-nogueras/LGBTClub/milestone/4)
    - [Arreglar errores iniciales](https://github.com/aure-nogueras/LGBTClub/issues/4)
+   - [Modificar descripción del problema](https://github.com/aure-nogueras/LGBTClub/issues/29)
+- [Integración continua](https://github.com/aure-nogueras/LGBTClub/milestone/5)
+   - [Añadir travis.yml](https://github.com/aure-nogueras/LGBTClub/issues/5)
+   - [Incluir repositorio en Travis](https://github.com/aure-nogueras/LGBTClub/issues/6)
+   - [Arreglar error en .travis.yml](https://github.com/aure-nogueras/LGBTClub/issues/7)
+- [Explicación de la arquitectura del proyecto](https://github.com/aure-nogueras/LGBTClub/milestone/3)
+   - [Añadir arquitectura en readme](https://github.com/aure-nogueras/LGBTClub/issues/9)
+   - [Añadir diagrama de la arquitectura de la aplicación](https://github.com/aure-nogueras/LGBTClub/issues/10) 
+   
+	 
+	 
