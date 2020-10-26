@@ -28,7 +28,7 @@ Para abordar el problema se ha elegido una arquitectura basada en microservicios
 	
 Para comunicar los servicios se utilizará una *API-GATEWAY*.
 
-El resto de herramientas elegidas se especifica [aquí](https://aure-nogueras.github.io/LGBTClub/docs/eleccion_herramientas).
+El resto de herramientas elegidas se especifica [aquí](https://aure-nogueras.github.io/LGBTClub/docs/eleccion_herramientas) y la construcción de las primeras clases [aquí](https://aure-nogueras.github.io/LGBTClub/docs/primeras_clases).
 
 ![Arquitectura](./docs/imgs/Arquitectura.png "Arquitectura basada en microservicios")
 
