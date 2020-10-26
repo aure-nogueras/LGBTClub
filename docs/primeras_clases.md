@@ -71,7 +71,7 @@ module.exports = function(grunt) {
 
 Como aún no hay tests, configuraré las opciones del *task runner* más adelante.
 
-Para comenzar la creación de clases he incorporado la carpeta [*src*](https://github.com/aure-nogueras/LGBTClub/blob/main/src). Dentro de ella, he añadido tres subcarpetas, una para cada microservicio. El siguiente paso ha sido crear las clases [*User.js*](https://github.com/aure-nogueras/LGBTClub/blob/main/src/UserManagement/User.js), [*HistoricalEvent.js*](https://github.com/aure-nogueras/LGBTClub/blob/main/src/HistoricalEvent/HistoricalEvent.js) y [*InfoAndExperiences.js*]((https://github.com/aure-nogueras/LGBTClub/blob/main/src/InfoAndExperiences/InfoAndExperiences.js).
+Para comenzar la creación de clases he incorporado la carpeta [*src*](https://github.com/aure-nogueras/LGBTClub/blob/main/src). Dentro de ella, he añadido tres subcarpetas, una para cada microservicio. El siguiente paso ha sido crear las clases [*User.js*](https://github.com/aure-nogueras/LGBTClub/blob/main/src/UserManagement/User.js), [*HistoricalEvent.js*](https://github.com/aure-nogueras/LGBTClub/blob/main/src/HistoricalEvent/HistoricalEvent.js) y [*InfoAndExperiences.js*](https://github.com/aure-nogueras/LGBTClub/blob/main/src/InfoAndExperiences/InfoAndExperiences.js).
 
 
 Por último, he comprobado que el código de la estructura es compilable [aquí](https://repl.it/languages/nodejs) y he incorporado el archivo [*cc.yaml*](https://github.com/aure-nogueras/LGBTClub/blob/main/cc.yaml).
