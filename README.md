@@ -4,6 +4,8 @@ Proyecto de la asignatura *Cloud Computing* del Máster de Ingeniería Informát
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
+[![Build Status](https://travis-ci.org/aure-nogueras/LGBTClub.svg?branch=main)](https://travis-ci.org/github/aure-nogueras/LGBTClub)
+
 La descripción del problema se puede consultar [aquí](https://aure-nogueras.github.io/LGBTClub/docs/descripcion_problema).
 
 El plan de desarrollo se puede ver [aquí](https://github.com/aure-nogueras/LGBTClub/projects/1).
@@ -47,6 +49,7 @@ La documentación se ubicará en el directorio [docs](https://github.com/aure-no
    - [Incluir documentación de configuración de GitHub](https://github.com/aure-nogueras/LGBTClub/issues/2)
    - [Incluir documentación sobre herramientas elegidas](https://github.com/aure-nogueras/LGBTClub/issues/11)
    - [Mover descripción del problema del readme a docs](https://github.com/aure-nogueras/LGBTClub/issues/30)
+   - [Indicar cómo se ha realizado la creación de las primeras clases](https://github.com/aure-nogueras/LGBTClub/issues/31)
 - [Configuración básica del repositorio](https://github.com/aure-nogueras/LGBTClub/milestone/1)
    - [Añadir GitHub Pages](https://github.com/aure-nogueras/LGBTClub/issues/3)
    - [Terminar configuración inicial del repositorio](https://github.com/aure-nogueras/LGBTClub/issues/1)
@@ -57,6 +60,8 @@ La documentación se ubicará en el directorio [docs](https://github.com/aure-no
    - [Añadir travis.yml](https://github.com/aure-nogueras/LGBTClub/issues/5)
    - [Incluir repositorio en Travis](https://github.com/aure-nogueras/LGBTClub/issues/6)
    - [Arreglar error en .travis.yml](https://github.com/aure-nogueras/LGBTClub/issues/7)
+   - [Arreglar errata en primeras_clases y en cc.yaml](https://github.com/aure-nogueras/LGBTClub/issues/32)
+   - [Añadir badge de travis](https://github.com/aure-nogueras/LGBTClub/issues/8)
 - [Explicación de la arquitectura del proyecto](https://github.com/aure-nogueras/LGBTClub/milestone/3)
    - [Añadir arquitectura en readme](https://github.com/aure-nogueras/LGBTClub/issues/9)
    - [Añadir diagrama de la arquitectura de la aplicación](https://github.com/aure-nogueras/LGBTClub/issues/10) 
