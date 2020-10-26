@@ -43,6 +43,26 @@ La documentación se ubicará en el directorio [docs](https://github.com/aure-no
 - [Descripción del problema](https://aure-nogueras.github.io/LGBTClub/docs/descripcion_problema).
 - [Creación de las primeras clases](https://aure-nogueras.github.io/LGBTClub/docs/primeras_clases).
 
+## Historias de usuario
+
+- [[HU1] Añadir eventos históricos o días de celebración como usuario](https://github.com/aure-nogueras/LGBTClub/issues/12).
+- [[HU2] Añadir términos o experiencias personales como usuario LGTB](https://github.com/aure-nogueras/LGBTClub/issues/13).
+- [[HU3] Eliminar eventos históricos o días de celebración como usuario](https://github.com/aure-nogueras/LGBTClub/issues/14).
+- [[HU4] Eliminar términos o experiencias personales como usuario LGTB](https://github.com/aure-nogueras/LGBTClub/issues/15).
+- [[HU5] Modificar eventos históricos o días de celebración como usuario](https://github.com/aure-nogueras/LGBTClub/issues/16).
+- [[HU6] Modificar términos o experiencias personales como usuario LGTB](https://github.com/aure-nogueras/LGBTClub/issues/17).
+- [[HU7] Suscribirse al servicio de mensajes como usuario](https://github.com/aure-nogueras/LGBTClub/issues/18).
+- [[HU8] Desuscribirse del servicio de mensajería como usuario](https://github.com/aure-nogueras/LGBTClub/issues/19).
+- [[HU9] Añadir eventos históricos o días de celebración como administrador](https://github.com/aure-nogueras/LGBTClub/issues/20).
+- [[HU10] Añadir términos o experiencias personales como administrador](https://github.com/aure-nogueras/LGBTClub/issues/21).
+- [[HU11] Eliminar eventos históricos o días de celebración como administrador](https://github.com/aure-nogueras/LGBTClub/issues/22).
+- [[HU12] Eliminar términos o experiencias personales como administrador](https://github.com/aure-nogueras/LGBTClub/issues/23).
+- [[HU13] Modificar eventos históricos o días de celebración como administrador](https://github.com/aure-nogueras/LGBTClub/issues/24).
+- [[HU14] Modificar términos o experiencias personales como administrador](https://github.com/aure-nogueras/LGBTClub/issues/25).
+- [[HU15] Dar de alta a un usuario al servicio de mensajería como administrador](https://github.com/aure-nogueras/LGBTClub/issues/26).
+- [[HU16] Dar de baja a un usuario del servicio de mensajería como administrador](https://github.com/aure-nogueras/LGBTClub/issues/27).
+- [[HU17] Modificar los datos de un usuario suscrito al servicio de mensajería como administrador](https://github.com/aure-nogueras/LGBTClub/issues/28).
+
 ## Milestones e issues resueltos
 
 - [Documentación](https://github.com/aure-nogueras/LGBTClub/milestone/2)
@@ -50,6 +70,7 @@ La documentación se ubicará en el directorio [docs](https://github.com/aure-no
    - [Incluir documentación sobre herramientas elegidas](https://github.com/aure-nogueras/LGBTClub/issues/11)
    - [Mover descripción del problema del readme a docs](https://github.com/aure-nogueras/LGBTClub/issues/30)
    - [Indicar cómo se ha realizado la creación de las primeras clases](https://github.com/aure-nogueras/LGBTClub/issues/31)
+   - [Añadir HU al readme](https://github.com/aure-nogueras/LGBTClub/issues/36)
 - [Configuración básica del repositorio](https://github.com/aure-nogueras/LGBTClub/milestone/1)
    - [Añadir GitHub Pages](https://github.com/aure-nogueras/LGBTClub/issues/3)
    - [Terminar configuración inicial del repositorio](https://github.com/aure-nogueras/LGBTClub/issues/1)
@@ -64,6 +85,7 @@ La documentación se ubicará en el directorio [docs](https://github.com/aure-no
    - [Arreglar error en .travis.yml](https://github.com/aure-nogueras/LGBTClub/issues/7)
    - [Arreglar errata en primeras_clases y en cc.yaml](https://github.com/aure-nogueras/LGBTClub/issues/32)
    - [Añadir badge de travis](https://github.com/aure-nogueras/LGBTClub/issues/8)
+   - [Corregir el build de Travis](https://github.com/aure-nogueras/LGBTClub/issues/35)
 - [Explicación de la arquitectura del proyecto](https://github.com/aure-nogueras/LGBTClub/milestone/3)
    - [Añadir arquitectura en readme](https://github.com/aure-nogueras/LGBTClub/issues/9)
    - [Añadir diagrama de la arquitectura de la aplicación](https://github.com/aure-nogueras/LGBTClub/issues/10) 
