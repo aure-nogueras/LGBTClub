@@ -32,6 +32,12 @@ Para comunicar los servicios se utilizará una *API-GATEWAY*.
 
 El resto de herramientas elegidas se especifica [aquí](https://aure-nogueras.github.io/LGBTClub/docs/eleccion_herramientas) y la construcción de las primeras clases [aquí](https://aure-nogueras.github.io/LGBTClub/docs/primeras_clases).
 
+Primeras clases:
+
+- [*User.js*](https://github.com/aure-nogueras/LGBTClub/blob/main/src/UserManagement/User.js)
+- [*HistoricalEvent.js*](https://github.com/aure-nogueras/LGBTClub/blob/main/src/HistoricalEvent/HistoricalEvent.js)
+- [*InfoAndExperiences.js*](https://github.com/aure-nogueras/LGBTClub/blob/main/src/InfoAndExperiences/InfoAndExperiences.js) 
+
 ![Arquitectura](./docs/imgs/Arquitectura.png "Arquitectura basada en microservicios")
 
 
@@ -79,6 +85,7 @@ La documentación se ubicará en el directorio [docs](https://github.com/aure-no
    - [Modificar descripción del problema](https://github.com/aure-nogueras/LGBTClub/issues/29)
    - [Arreglar sintaxis de cc.yaml](https://github.com/aure-nogueras/LGBTClub/issues/33)
    - [Arreglar error en estructura de clases](https://github.com/aure-nogueras/LGBTClub/issues/34)
+   - [Eliminar node_modules](https://github.com/aure-nogueras/LGBTClub/issues/37)
 - [Integración continua](https://github.com/aure-nogueras/LGBTClub/milestone/5)
    - [Añadir travis.yml](https://github.com/aure-nogueras/LGBTClub/issues/5)
    - [Incluir repositorio en Travis](https://github.com/aure-nogueras/LGBTClub/issues/6)
