@@ -6,11 +6,11 @@ Para empezar a crear la estructura del proyecto, lo primero que he hecho ha sido
 
 `nvm use node`
 
-A continuación, he creado el archivo [*package.json*](https://github.com/aure-nogueras/LGBTClub/blob/main/package.json) con `npm init`. Este es el contenido:
+A continuación, he creado el archivo [*package.json*](https://github.com/aure-nogueras/LGTBClub/blob/main/package.json) con `npm init`. Este es el contenido:
 
 ```
 {
-  "name": "lgbtclub",
+  "name": "LGTBclub",
   "version": "1.0.0",
   "description": "Proyecto para educar sobre la comunidad LGTB",
   "main": "index.js",
@@ -41,7 +41,7 @@ Después he añadido *Grunt* con `npm install grunt --save-dev`. Esto incorpora 
   }
 ```
 
-Lo siguiente ha sido crear el archivo [*Gruntfile.js*](https://github.com/aure-nogueras/LGBTClub/blob/main/Gruntfile.js). Para ello he seguido [este tutorial](https://gruntjs.com/getting-started).
+Lo siguiente ha sido crear el archivo [*Gruntfile.js*](https://github.com/aure-nogueras/LGTBClub/blob/main/Gruntfile.js). Para ello he seguido [este tutorial](https://gruntjs.com/getting-started).
 
 ```
 module.exports = function(grunt) {
@@ -71,10 +71,10 @@ module.exports = function(grunt) {
 
 Como aún no hay tests, configuraré las opciones del *task runner* más adelante.
 
-Para comenzar la creación de clases he incorporado la carpeta [*src*](https://github.com/aure-nogueras/LGBTClub/blob/main/src). Dentro de ella, he añadido tres subcarpetas, una para cada microservicio. El siguiente paso ha sido crear las clases [*User.js*](https://github.com/aure-nogueras/LGBTClub/blob/main/src/UserManagement/User.js), [*HistoricalEvent.js*](https://github.com/aure-nogueras/LGBTClub/blob/main/src/HistoricalEvent/HistoricalEvent.js) y [*InfoAndExperiences.js*](https://github.com/aure-nogueras/LGBTClub/blob/main/src/InfoAndExperiences/InfoAndExperiences.js).
+Para comenzar la creación de clases he incorporado la carpeta [*src*](https://github.com/aure-nogueras/LGTBClub/blob/main/src). Dentro de ella, he añadido tres subcarpetas, una para cada microservicio. El siguiente paso ha sido crear las clases [*User.js*](https://github.com/aure-nogueras/LGTBClub/blob/main/src/UserManagement/User.js), [*HistoricalEvent.js*](https://github.com/aure-nogueras/LGTBClub/blob/main/src/HistoricalEvent/HistoricalEvent.js) y [*InfoAndExperiences.js*](https://github.com/aure-nogueras/LGTBClub/blob/main/src/InfoAndExperiences/InfoAndExperiences.js).
 
 
-Por último, he comprobado que el código de la estructura es compilable [aquí](https://repl.it/languages/nodejs) y he incorporado el archivo [*cc.yaml*](https://github.com/aure-nogueras/LGBTClub/blob/main/cc.yaml).
+Por último, he comprobado que el código de la estructura es compilable [aquí](https://repl.it/languages/nodejs) y he incorporado el archivo [*cc.yaml*](https://github.com/aure-nogueras/LGTBClub/blob/main/cc.yaml).
 
 ```
 entidad:

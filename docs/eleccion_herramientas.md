@@ -44,11 +44,11 @@ Para la integración continua he elegido *Travis*. Esta herramienta es muy fáci
 
 ![Perfil en Travis](./imgs/travis.png "Perfil en Travis")
 
-Después he seguido los pasos indicados [aquí](https://docs.travis-ci.com/user/tutorial/?utm_source=help-page&utm_medium=travisweb). Primero he accedido a los *settings* de mi perfil de *Travis*. Una vez ahí, se despliega una lista con mis repositorios. Selecciono el repositorio correspondiente al proyecto, [*LGBTClub*](https://github.com/aure-nogueras/LGBTClub).
+Después he seguido los pasos indicados [aquí](https://docs.travis-ci.com/user/tutorial/?utm_source=help-page&utm_medium=travisweb). Primero he accedido a los *settings* de mi perfil de *Travis*. Una vez ahí, se despliega una lista con mis repositorios. Selecciono el repositorio correspondiente al proyecto, [*LGTBClub*](https://github.com/aure-nogueras/LGTBClub).
 
-![Activación de Travis en el repositorio](./imgs/lgbt_club.png "Activación de Travis en el repositorio")
+![Activación de Travis en el repositorio](./imgs/lgtb_club.png "Activación de Travis en el repositorio")
 
-Por último, he creado el archivo [*.travis.yml*](https://github.com/aure-nogueras/LGBTClub/blob/main/.travis.yml) y lo he añadido al repositorio. Este es su contenido:
+Por último, he creado el archivo [*.travis.yml*](https://github.com/aure-nogueras/LGTBClub/blob/main/.travis.yml) y lo he añadido al repositorio. Este es su contenido:
 
 ```
 language: node_js

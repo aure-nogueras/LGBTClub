@@ -4,7 +4,7 @@ class User{
 	constructor(name, email, lgtb){
 		this.name = name;
 		this.email = email;
-		this.lgtb = lgtb;
+		this.is_lgtb = lgtb;
 	}
 	
 	getName(){
