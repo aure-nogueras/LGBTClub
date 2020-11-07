@@ -1,10 +1,8 @@
 # LGTBClub
 
-Proyecto de desarrollo de un sistema de divulgación de información del colectivo LGTB.
+Proyecto de desarrollo de un sistema de divulgación de información del colectivo LGTB :rainbow_flag:.
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-
-[![Build Status](https://travis-ci.org/aure-nogueras/LGTBClub.svg?branch=main)](https://travis-ci.org/github/aure-nogueras/LGTBClub)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Build Status](https://travis-ci.org/aure-nogueras/LGTBClub.svg?branch=main)](https://travis-ci.org/github/aure-nogueras/LGTBClub)
 
 La descripción del problema se puede consultar [aquí](https://aure-nogueras.github.io/LGTBClub/docs/descripcion_problema).
 
@@ -20,9 +18,9 @@ Los tres microservicios que van a desplegarse son los siguientes:
 - **HistoricalEvents**: gestiona los eventos históricos y las fechas señaladas para el colectivo.
 - **InfoAndExperiences**: gestiona la información sobre los términos, las experiencias personales y los falsos mitos del colectivo.
 	
-En [esta página](https://www.redhat.com/es/topics/microservices/what-are-microservices) se explica con más detalle qué son los microservicios y cuáles son sus ventajas. 
+[Esta página](https://www.redhat.com/es/topics/microservices/what-are-microservices) explica con más detalle qué son los microservicios y cuáles son sus ventajas. 
 	
-El resto de herramientas elegidas se especifica [aquí](https://aure-nogueras.github.io/LGTBClub/docs/eleccion_herramientas) y la construcción de las primeras clases [aquí](https://aure-nogueras.github.io/LGTBClub/docs/primeras_clases).
+El resto de herramientas elegidas para el proyecto se especifica [aquí](https://aure-nogueras.github.io/LGTBClub/docs/eleccion_herramientas) y la construcción de las primeras clases [aquí](https://aure-nogueras.github.io/LGTBClub/docs/primeras_clases).
 
 Primeras clases:
 
@@ -34,7 +32,7 @@ Primeras clases:
 
 La planificación planteada inicialmente consta seis fases. Esta organización se irá modificando en función de las necesidades del proyecto conforme se vaya avanzando en su desarrollo. Además, no se trata de un plan secuencial, sino que muchas de las actividades se realizarán en paralelo.
 
-### Desarrollo de la gestión de usuarios
+### [Desarrollo de la gestión de usuarios](https://github.com/aure-nogueras/LGTBClub/milestone/7)
 
 Este apartado se centrará en el microservicio **UserManagement**. Hay que tener en cuenta que existen dos tipos de usuarios: aquellos que son LGTB y aquellos que no. Dichos niveles no son excluyentes. Esto quiere decir que un usuario LGTB puede realizar también las acciones que llevan a cabo los usuarios no LGTB. Sin embargo, no ocurre al revés. Hay ciertas funciones reservadas a usuarios LGTB.
 
@@ -52,7 +50,7 @@ Las historias de usuario asociadas a este apartado son las siguientes:
 - [[HU16] Dar de baja a un usuario del servicio de mensajería como administrador](https://github.com/aure-nogueras/LGTBClub/issues/27): un administrador puede dar de baja a cualquier usuario del servicio de mensajería.
 - [[HU17] Modificar los datos de un usuario suscrito al servicio de mensajería como administrador](https://github.com/aure-nogueras/LGTBClub/issues/28): un administrador puede modificar los datos de un usuario suscrito al servicio de mensajería.
 
-### Desarrollo de la gestión de eventos históricos
+### [Desarrollo de la gestión de eventos históricos](https://github.com/aure-nogueras/LGTBClub/milestone/8)
 
 Este apartado se centrará en el microservicio **HistoricalEvents**. Las historias de usuario relacionadas con este punto son las siguientes:
 
@@ -60,7 +58,7 @@ Este apartado se centrará en el microservicio **HistoricalEvents**. Las histori
 - [[HU11] Eliminar eventos históricos o días de celebración como administrador](https://github.com/aure-nogueras/LGTBClub/issues/22): un administrador puede eliminar un evento histórico o día de celebración.
 - [[HU13] Modificar eventos históricos o días de celebración como administrador](https://github.com/aure-nogueras/LGTBClub/issues/24): un administrador puede modificar un evento histórico o día de celebración, expandiendo la información mostrada o cambiando los datos erróneos.
 
-### Desarrollo de la gestión de la información y las experiencias personales
+### [Desarrollo de la gestión de la información y las experiencias personales](https://github.com/aure-nogueras/LGTBClub/milestone/9)
 
 Este apartado se centrará en el microservicio **InfoAndExperiences**. En esta categoría encontramos las siguientes historias de usuario:
 
@@ -68,17 +66,9 @@ Este apartado se centrará en el microservicio **InfoAndExperiences**. En esta c
 - [[HU12] Eliminar términos o experiencias personales como administrador](https://github.com/aure-nogueras/LGTBClub/issues/23): un administrador puede eliminar información asociada a términos o experiencias personales.
 - [[HU14] Modificar términos o experiencias personales como administrador](https://github.com/aure-nogueras/LGTBClub/issues/25): un administrador puede modificar términos o experiencias personales en el caso de encontrar errores o desear expandir la información.
 
-### Desarrollo de tests
+### [Desarrollo de tests](https://github.com/aure-nogueras/LGTBClub/milestone/10)
 
 A la vez que se van añadiendo funcionalidades al proyecto, se irán creando tests para comprobar su corrección.
-
-### Conexión entre los microservicios
-
-Este paso también será importante para comunicar los microservicios entre sí. Se llevará a cabo más adelante, cuando los servicios tengan al menos una mínima funcionalidad básica.
-
-### Servicios de logging y configuración distribuida
-
-Para el servicio de *logging*, he seleccionado el paquete *Winston*. En el caso de la configuración distribuida, he elegido *Consul*. Estas decisiones están explicadas [aquí](https://aure-nogueras.github.io/LGTBClub/docs/eleccion_herramientas).
 
 ## Sintaxis
 
