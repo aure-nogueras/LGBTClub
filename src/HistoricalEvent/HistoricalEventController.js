@@ -24,6 +24,12 @@ class HistoricalEventController{
 			console.log("La fecha del evento es incorrecta");
 		}
 	}
+	
+	// Eliminar un evento histórico HU10
+	deleteHistoricalEvent(historicalEvent){
+		let pos = this.historicalEventsList.indexOf(historicalEvent);
+		this.historicalEventsList.splice(pos, 1);
+	}
 }
 
 module.exports = HistoricalEventController;
