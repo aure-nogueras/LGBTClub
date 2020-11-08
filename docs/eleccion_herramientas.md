@@ -12,7 +12,7 @@ El entorno virtual que he elegido es *nvm*. Hay bastantes similitudes entre este
 
 ### Compilador online
 
-Para comprobar que el código escrito es compilable, he usado [esta herramienta](https://repl.it/languages/nodejs).
+Para comprobar que las primeras clases escritas son compilables, he usado [esta herramienta](https://repl.it/languages/nodejs). 
 
 ### Gestor de tareas
 

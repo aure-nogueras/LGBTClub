@@ -3,5 +3,7 @@ node_js:
 - "8"
 - "10"
 - "12"
+install:
+- npm install
 script:
-- echo 'sin tests'
+- grunt
