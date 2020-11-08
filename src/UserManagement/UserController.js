@@ -34,6 +34,11 @@ class UserController{
 		}
 	}
 	
+	// Eliminar a un usuario HU14
+	deleteUser(member){
+		let pos = this.usersList.indexOf(member);
+		this.usersList.splice(member, 1);
+	}
 }
 
 module.exports = UserController;
