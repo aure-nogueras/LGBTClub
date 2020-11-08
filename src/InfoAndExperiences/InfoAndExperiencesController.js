@@ -20,6 +20,14 @@ class InfoAndExperiencesController{
 	addInfoAndExperiences(experience){
 		this.infoAndExperiences.push(experience);
 	}
+	
+	// Eliminar un término o experiencia HU11
+	deleteInfoAndExperiences(experience){
+		let pos = this.infoAndExperiences.indexOf(experience);
+		this.infoAndExperiences.splice(pos, 1);
+	}
+	
+	
 }
 
 module.exports = InfoAndExperiencesController;
