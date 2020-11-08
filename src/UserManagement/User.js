@@ -1,4 +1,4 @@
-var history = require("../HistoricalEvent/HistoricalEvent.js");
+/*jshint esversion: 6 */
 
 // Clase User
 class User{
@@ -9,10 +9,11 @@ class User{
 		this.isLGTB = isLGTB;
 	}
 	
-	// Añadir un evento histórico como usuario HU1
-	addHistoricalEvent(historicalEvent, email){
-		history.addHistoricalEvent(historicalEvent, email);
+	// Hay dos tipos de usuarios, LGTB y no LGTB
+	// El get nos servirá para obtener el tipo
+	getUserLGTB(){
+		return this.isLGTB;
 	}
 }
 
-module.exports = User
+module.exports = User;
