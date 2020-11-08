@@ -6,78 +6,54 @@ Proyecto de desarrollo de un sistema de divulgación de información del colecti
 
 La descripción del problema se puede consultar [aquí](https://aure-nogueras.github.io/LGTBClub/docs/descripcion_problema).
 
-## Arquitectura del problema
 
-Para abordar el problema se ha elegido una arquitectura basada en microservicios, ya que van a desplegarse tres funcionalidades independientes. El hecho de que cada uno de los servicios pueda funcionar por separado es muy beneficioso, y permite una gestión descentralizada de los datos.
+## Rúbrica 1
 
-Además, he seleccionado esta arquitectura porque es muy adecuada para el despliegue de servicios en la nube. En el caso de que uno de los microservicios fallase, el resto no dependería de este error, tal y como pasaría en una arquitectura monolítica. En definitiva, la arquitectura de microservicios tiene muchas ventajas en cuanto a la facilidad de implementación, la capacidad de recuperación, la accesibilidad o la gran capacidad de expansión.
+### Configuración del gestor de tareas y justificación de su elección
 
-Los tres microservicios que van a desplegarse son los siguientes: 
+En la elección del gestor de tareas he comparado *Grunt* y *Gulp*. Dado que no he encontrado diferencias muy significativas que me hagan decantarme por uno o por otro, he decidido elegir *Grunt* por varios motivos. 
+En primer lugar, *Grunt* es fácil de aprender y configurar. Además, consta de una gran comunidad de usuarios, lo cual es muy beneficioso para resolver dudas y acceder a documentación. Esto también implica que existen *plugins* para casi todas las funcionalidades que vayamos a necesitar. Por último, aunque *Grunt* pueda ser más lento que *Gulp*, la envergadura de este proyecto no es tan grande como para que suponga una desventaja significativa. 
 
-- **UserManagement**: se encargará de la gestión de los usuarios. 
-- **HistoricalEvents**: gestiona los eventos históricos y las fechas señaladas para el colectivo.
-- **InfoAndExperiences**: gestiona la información sobre los términos, las experiencias personales y los falsos mitos del colectivo.
-	
-[Esta página](https://www.redhat.com/es/topics/microservices/what-are-microservices) explica con más detalle qué son los microservicios y cuáles son sus ventajas. 
-	
-El resto de herramientas elegidas para el proyecto se especifica [aquí](https://aure-nogueras.github.io/LGTBClub/docs/eleccion_herramientas) y la construcción de las primeras clases [aquí](https://aure-nogueras.github.io/LGTBClub/docs/primeras_clases).
+- [*Gulp vs Grunt*](https://deliciousbrains.com/grunt-vs-gulp-battle-build-tools/).
+- [*Grunt o Gulp*](https://blog.koalite.com/2015/06/grunt-o-gulp-que-uso/).
+- [Diferencias entre *Grunt* y *Gulp*](https://svcministry.org/es/dictionary/what-are-the-differences-between-grunt-and-gulp-js/).
+- [Comparativa entre *Grunt* y *Gulp*](https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/gulp-vs-grunt-que-diferencia-a-estos-task-runners).
 
-Primeras clases:
+La configuración se empezó a realizar en la entrega anterior, tal y como se explica [aquí](https://aure-nogueras.github.io/LGTBClub/docs/primeras_clases). 
 
-- [User.js](https://github.com/aure-nogueras/LGTBClub/blob/main/src/UserManagement/User.js)
-- [HistoricalEvent.js](https://github.com/aure-nogueras/LGTBClub/blob/main/src/HistoricalEvent/HistoricalEvent.js)
-- [InfoAndExperiences.js](https://github.com/aure-nogueras/LGTBClub/blob/main/src/InfoAndExperiences/InfoAndExperiences.js) 
+De este modo, primero se creó el archivo [*package.json*](https://github.com/aure-nogueras/LGTBClub/blob/main/package.json) y se añadieron las dependencias de *Grunt* con `npm install grunt --save-dev`. Después, se añadió el archivo [*Gruntfile.js*](https://github.com/aure-nogueras/LGTBClub/blob/main/Gruntfile.js) siguiendo [este tutorial](https://gruntjs.com/getting-started).
 
-## Planificación del proyecto
+## Rúbrica 2
 
-La planificación planteada inicialmente consta seis fases. Esta organización se irá modificando en función de las necesidades del proyecto conforme se vaya avanzando en su desarrollo. Además, no se trata de un plan secuencial, sino que muchas de las actividades se realizarán en paralelo.
+### Elección y justificación de la biblioteca de aserciones usada
 
-### [Desarrollo de la gestión de usuarios](https://github.com/aure-nogueras/LGTBClub/milestone/7)
+Para elegir una biblioteca de aserciones he comparado *assert* y *Unexpected*. Finalmente he optado por utilizar *assert*. Esto se debe a que es la biblioteca estándar de *javascript*, con lo que no requiere la instalación de ninguna dependencia. Además, es muy sencilla de usar, y será interesante compararla con el marco de pruebas que se elija.
 
-Este apartado se centrará en el microservicio **UserManagement**. Hay que tener en cuenta que existen dos tipos de usuarios: aquellos que son LGTB y aquellos que no. Dichos niveles no son excluyentes. Esto quiere decir que un usuario LGTB puede realizar también las acciones que llevan a cabo los usuarios no LGTB. Sin embargo, no ocurre al revés. Hay ciertas funciones reservadas a usuarios LGTB.
+## Rúbrica 3
 
-Las historias de usuario asociadas a este apartado son las siguientes:
+### Elección y justificación del marco de pruebas usado
 
-- [[HU1] Añadir eventos históricos o días de celebración como usuario](https://github.com/aure-nogueras/LGTBClub/issues/12): cualquier tipo de usuario puede añadir eventos históricos.
-- [[HU2] Añadir términos o experiencias personales como usuario LGTB](https://github.com/aure-nogueras/LGTBClub/issues/13): solo los usuarios LGTB pueden añadir experiencias personales o información sobre términos.
-- [[HU3] Eliminar eventos históricos o días de celebración como usuario](https://github.com/aure-nogueras/LGTBClub/issues/14): cualquier usuario puede eliminar un evento histórico siempre que lo haya añadido.
-- [[HU4] Eliminar términos o experiencias personales como usuario LGTB](https://github.com/aure-nogueras/LGTBClub/issues/15): solo los usuarios LGTB pueden eliminar experiencias personales o términos y únicamente en el caso de que los hayan añadido.
-- [[HU5] Modificar eventos históricos o días de celebración como usuario](https://github.com/aure-nogueras/LGTBClub/issues/16): cualquier usuario puede modificar los eventos históricos que haya añadido. Esto se debe a que puede haber cometido un error al incluirlos o porque quizás quiere expandir la información incorporada.
-- [[HU6] Modificar términos o experiencias personales como usuario LGTB](https://github.com/aure-nogueras/LGTBClub/issues/17): un usuario LGBT puede modificar una experiencia o término que haya añadido para corregir errores o cambiar la información incluida.
-- [[HU7] Suscribirse al servicio de mensajes como usuario](https://github.com/aure-nogueras/LGTBClub/issues/18): cualquier tipo de usuario puede solicitar suscribirse al servicio de mensajería.
-- [[HU8] Desuscribirse del servicio de mensajería como usuario](https://github.com/aure-nogueras/LGTBClub/issues/19): cualquier tipo de usuario puede desuscribirse del servicio de mensajería en cualquier momento.
-- [[HU15] Dar de alta a un usuario al servicio de mensajería como administrador](https://github.com/aure-nogueras/LGTBClub/issues/26): un administrador puede dar de alta a cualquier usuario en el servicio de mensajería.
-- [[HU16] Dar de baja a un usuario del servicio de mensajería como administrador](https://github.com/aure-nogueras/LGTBClub/issues/27): un administrador puede dar de baja a cualquier usuario del servicio de mensajería.
-- [[HU17] Modificar los datos de un usuario suscrito al servicio de mensajería como administrador](https://github.com/aure-nogueras/LGTBClub/issues/28): un administrador puede modificar los datos de un usuario suscrito al servicio de mensajería.
+En cuanto al marco de pruebas, he investigado acerca de la mejor opción. He considerado opciones como *Jasmine*, *Chai*, *Jest*, *AVA* o *Mocha*. Para elegir una de ellas, he observado las ventajas y desventajas de cada una.
 
-### [Desarrollo de la gestión de eventos históricos](https://github.com/aure-nogueras/LGTBClub/milestone/8)
+En el caso de *AVA*, se trata de un marco de pruebas relativamente nuevo, con lo que no hay demasiada documentación al respecto. *Jasmine* y *Jest* también se han descartado debido a sus mensajes de error. *Jest* muestra múltiples mensajes para el mismo error, mientras que en *Jasmine*, los mensajes de error no son muy amigables. Entre *Chai* y *Mocha*, he seleccionado *Chai*. Esto se debe a que consta de varias interfaces, ofreciendo al desarrollador la posibilidad de elegir la más conveniente. Así, puede optarse tanto por el *Test Driven Development* como por el *Behaviour Driven Development*.
 
-Este apartado se centrará en el microservicio **HistoricalEvents**. Las historias de usuario relacionadas con este punto son las siguientes:
+- [*Mocha vs Jasmine, Chai, Sinon & Cucumber* en 2019](https://raygun.com/blog/mocha-vs-jasmine-chai-sinon-cucumber/).
+- [¿Cuál es el mejor *framework* de tests unitarios para *Node.js*?](https://blog.logrocket.com/the-best-unit-testing-frameworks-for-node-js/).
+- [*Chai*](https://www.chaijs.com/).
 
-- [[HU9] Añadir eventos históricos o días de celebración como administrador](https://github.com/aure-nogueras/LGTBClub/issues/20): un administrador puede añadir un evento histórico o día de celebración.
-- [[HU11] Eliminar eventos históricos o días de celebración como administrador](https://github.com/aure-nogueras/LGTBClub/issues/22): un administrador puede eliminar un evento histórico o día de celebración.
-- [[HU13] Modificar eventos históricos o días de celebración como administrador](https://github.com/aure-nogueras/LGTBClub/issues/24): un administrador puede modificar un evento histórico o día de celebración, expandiendo la información mostrada o cambiando los datos erróneos.
+## Rúbrica 4
 
-### [Desarrollo de la gestión de la información y las experiencias personales](https://github.com/aure-nogueras/LGTBClub/milestone/9)
+### Correcta relación entre avance de código y HUs
 
-Este apartado se centrará en el microservicio **InfoAndExperiences**. En esta categoría encontramos las siguientes historias de usuario:
+## Rúbrica 5
 
-- [[HU10] Añadir términos o experiencias personales como administrador](https://github.com/aure-nogueras/LGTBClub/issues/21): un administrador puede añadir información sobre términos o experiencias personales.
-- [[HU12] Eliminar términos o experiencias personales como administrador](https://github.com/aure-nogueras/LGTBClub/issues/23): un administrador puede eliminar información asociada a términos o experiencias personales.
-- [[HU14] Modificar términos o experiencias personales como administrador](https://github.com/aure-nogueras/LGTBClub/issues/25): un administrador puede modificar términos o experiencias personales en el caso de encontrar errores o desear expandir la información.
-
-### [Desarrollo de tests](https://github.com/aure-nogueras/LGTBClub/milestone/10)
-
-A la vez que se van añadiendo funcionalidades al proyecto, se irán creando tests para comprobar su corrección.
-
-## Sintaxis
-
-La herramienta utilizada para comprobar que la sintaxis de las clases es correcta es [esta](https://repl.it/languages/nodejs).
-
+### Avance del proyecto
 
 ## Documentación
 
 La documentación se ubicará en el directorio [docs](https://github.com/aure-nogueras/ProyectoCC/tree/main/docs). 
+- [Arquitectura elegida](https://aure-nogueras.github.io/LGTBClub/docs/arquitectura).
+- [Planificación del proyecto](https://aure-nogueras.github.io/LGTBClub/docs/planificacion).
 - [Configuración inicial del entorno para comenzar el desarrollo del proyecto](https://aure-nogueras.github.io/LGTBClub/docs/configuracion_entorno).
 - [Elección de herramientas](https://aure-nogueras.github.io/LGTBClub/docs/eleccion_herramientas).
 - [Descripción del problema](https://aure-nogueras.github.io/LGTBClub/docs/descripcion_problema).
