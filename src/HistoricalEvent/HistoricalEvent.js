@@ -15,6 +15,16 @@ class HistoricalEvent{
 		this.email = email;
 	}
 	
+	// Relacionado con la HU 16
+	getName(){
+		return this.name;
+	}
+	
+	// Relacionado con la HU 16
+	getDescription(){
+		return this.description;
+	}
+	
 	// Comprobar que la fecha de un evento histórico es válida	
 	isDateValid(){
 		var valid = false;
