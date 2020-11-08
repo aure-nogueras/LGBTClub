@@ -27,7 +27,12 @@ class InfoAndExperiencesController{
 		this.infoAndExperiences.splice(pos, 1);
 	}
 	
-	
+	// Modificar la descripción de un término o experiencia HU12
+	modifyInfoAndExperiences(experience, description){
+		this.deleteInfoAndExperiences(experience);
+		experience.setDescription(description);
+		this.addInfoAndExperiences(experience);
+	}
 }
 
 module.exports = InfoAndExperiencesController;
