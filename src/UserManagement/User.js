@@ -57,6 +57,11 @@ class User{
 			console.log("Este usuario no ha creado este término o no es LGTB, así que no puede modificarlo");
 		}
 	}
+	
+	// Suscribirse al servicio de mensajería como usuario HU6
+	addUser(usersList){
+		usersList.addUser(this);
+	}
 }
 
 module.exports = User;
