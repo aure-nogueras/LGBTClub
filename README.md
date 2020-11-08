@@ -19,7 +19,7 @@ Estos son los tests ejecutados con la biblioteca de aserciones:
 	- [*testInfoAndExperiences.js*](https://github.com/aure-nogueras/LGTBClub/blob/main/src/InfoAndExperiences/testInfoAndExperiences.js)
 	- [*testInfoAndExperiencesController.js*](https://github.com/aure-nogueras/LGTBClub/blob/main/src/InfoAndExperiences/testInfoAndExperiencesController.js)
 - En la carpeta *UserManagement*:
-	- [*testUser.js*](https://github.com/aure-nogueras/LGTBClub/blob/main/src/InfoAndExperiences/testInfoAndExperiencesController.js)
+	- [*testUser.js*](https://github.com/aure-nogueras/LGTBClub/blob/main/src/UserManagement/testUser.js)
 	- [*testUserController.js*](https://github.com/aure-nogueras/LGTBClub/blob/main/src/UserManagement/testUserController.js)
 
 ## Elección y justificación del marco de pruebas usado
