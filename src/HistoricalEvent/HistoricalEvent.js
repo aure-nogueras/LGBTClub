@@ -15,6 +15,11 @@ class HistoricalEvent{
 		this.email = email;
 	}
 	
+	// Relacionado con la clase User
+	getEmail(){
+		return this.email;
+	}
+	
 	// Relacionado con la HU 16
 	getName(){
 		return this.name;

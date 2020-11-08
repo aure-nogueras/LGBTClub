@@ -18,6 +18,14 @@ describe('HistoricalEvent', function(){
 		});
 	});
 	
+	// Prueba que el email se almacene bien
+	describe('Obtener email', function(){
+		it('Debería obtener el mismo email con el que se ha creado el evento', function(){
+			var newEvent = new event("Día del orgullo", 28, 6, 2020, "Día de celebración y reclamación de los derechos del colectivo", "felipe@gmail.com");
+			assert.equal(newEvent.getEmail(), "felipe@gmail.com");
+		});
+	});
+	
 	// Prueba que el nombre del evento se almacene bien
 	describe('Obtener nombre del evento', function(){
 		it('Debería obtener el mismo nombre con el que se ha creado el evento', function(){
