@@ -39,6 +39,15 @@ class User{
 			console.log("Este usuario no ha creado este evento, así que no puede eliminarlo");
 		}
 	}
+	
+	// Eliminar un término como usuario LGTB HU4
+	deleteInfoAndExperiences(experience, infoAndExperiencesList){
+		if(experience.getEmail() == this.email && this.getUserLGTB()){
+			infoAndExperiencesList.deleteInfoAndExperiences(experience);
+		}else{
+			console.log("Este usuario no ha creado este término o no es LGTB, así que no puede borrarlo");
+		}
+	}
 }
 
 module.exports = User;
