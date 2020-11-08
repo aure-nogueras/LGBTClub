@@ -26,6 +26,10 @@ class InfoAndExperiences{
 		return this.description;
 	}
 	
+	// Relacionado con la modificación de términos y experiencias HU11
+	setDescription(description){
+		this.description = description;
+	}
 }
 
 module.exports = InfoAndExperiences;
