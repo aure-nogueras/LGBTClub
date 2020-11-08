@@ -16,6 +16,16 @@ class InfoAndExperiences{
 		return this.email;
 	}
 	
+	// Relacionado con la HU 16
+	getName(){
+		return this.name;
+	}
+	
+	// Relacionado con la HU 16
+	getDescription(){
+		return this.description;
+	}
+	
 }
 
 module.exports = InfoAndExperiences;
