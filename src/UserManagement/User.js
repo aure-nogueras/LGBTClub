@@ -30,6 +30,15 @@ class User{
 			console.log("Este usuario no puede añadir términos ni experiencias porque no es LGTB");
 		}
 	}
+	
+	// Eliminar un evento histórico como usuario HU3
+	deleteHistoricalEvent(historicalEvent, historicalEventsList){
+		if(historicalEvent.getEmail() == this.email){
+			historicalEventsList.deleteHistoricalEvent(historicalEvent);
+		}else{
+			console.log("Este usuario no ha creado este evento, así que no puede eliminarlo");
+		}
+	}
 }
 
 module.exports = User;
