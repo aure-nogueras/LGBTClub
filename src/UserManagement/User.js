@@ -48,6 +48,15 @@ class User{
 			console.log("Este usuario no ha creado este término o no es LGTB, así que no puede borrarlo");
 		}
 	}
+	
+	// Modificar un término como usuario LGTB HU5
+	modifyInfoAndExperiences(experience, description, infoAndExperiencesList){
+		if(experience.getEmail() == this.email && this.getUserLGTB()){
+			infoAndExperiencesList.modifyInfoAndExperiences(experience, description);
+		}else{
+			console.log("Este usuario no ha creado este término o no es LGTB, así que no puede modificarlo");
+		}
+	}
 }
 
 module.exports = User;
