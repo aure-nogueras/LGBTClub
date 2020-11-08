@@ -45,6 +45,16 @@ class UserController{
 		this.deleteUser(oldUser);
 		this.addUser(newUser);
 	}
+	
+	// Mandar información a los usuarios diariamente HU16
+	// De momento se imprime por pantalla para probarlo
+	sendInfoToUsers(historicalEvents, infoAndExperiences){
+		var posHE = Math.floor(Math.random()*historicalEvents.getHistoricalEventsList().length);
+		var posIAE = Math.floor(Math.random()*infoAndExperiences.getInfoAndExperiencesList().length);
+		var message = "Evento diario: " + historicalEvents.getHistoricalEventsList()[posHE].getName() + " " + historicalEvents.getHistoricalEventsList()[posHE].getDescription() + "\nExperiencia diaria: " + infoAndExperiences.getInfoAndExperiencesList()[posIAE].getName() + " " + infoAndExperiences.getInfoAndExperiencesList()[posIAE].getDescription() + " \n";
+		process.stdout.write(message);
+		return message;
+	}
 }
 
 module.exports = UserController;
