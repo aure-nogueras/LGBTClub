@@ -14,6 +14,12 @@ class User{
 	getUserLGTB(){
 		return this.isLGTB;
 	}
+	
+	// Añadir un evento histórico como usuario HU1
+	addHistoricalEvent(historicalEvent, historicalEventsList){
+		historicalEventsList.addHistoricalEvent(historicalEvent);
+	}
+	
 }
 
 module.exports = User;
