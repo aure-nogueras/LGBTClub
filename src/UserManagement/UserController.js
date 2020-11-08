@@ -25,6 +25,15 @@ class UserController{
 		return added;
 	}
 	
+	// Añadir a un usuario HU13
+	addUser(member){
+		if(!this.isAdded(member)){
+			this.usersList.push(member);
+		}else{
+			console.log("Ese usuario ya está añadido");
+		}
+	}
+	
 }
 
 module.exports = UserController;
