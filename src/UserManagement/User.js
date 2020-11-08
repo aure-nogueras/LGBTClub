@@ -62,6 +62,11 @@ class User{
 	addUser(usersList){
 		usersList.addUser(this);
 	}
+	
+	// Desuscribirse del servicio de mensajería como usuario HU7
+	deleteUser(usersList){
+		usersList.deleteUser(this);
+	}
 }
 
 module.exports = User;
