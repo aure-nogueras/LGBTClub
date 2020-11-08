@@ -39,6 +39,12 @@ class UserController{
 		let pos = this.usersList.indexOf(member);
 		this.usersList.splice(member, 1);
 	}
+	
+	// Modificar los datos de un usuario HU15
+	modifyUser(oldUser, newUser){
+		this.deleteUser(oldUser);
+		this.addUser(newUser);
+	}
 }
 
 module.exports = UserController;
