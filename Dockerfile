@@ -1,8 +1,8 @@
-# Descarga la última versión de node.js
+# Descarga la última versión de alpine
 FROM alpine:latest
 
 # Crea un directorio donde se almacenará el código de la aplicación
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copia del package.json y el package-lock.json
 COPY package*.json ./
@@ -11,7 +11,8 @@ COPY package*.json ./
 RUN apk add --update nodejs nodejs-npm && npm install && npm install -g grunt-cli
 
 # Se copia el resto
-COPY . .
+COPY src ./src/ 
+COPY Gruntfile.js ./
 
 # Ejecutamos grunt para los tests
-RUN grunt
+CMD grunt
