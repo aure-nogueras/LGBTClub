@@ -1,7 +1,5 @@
 name: Publicar la imagen Docker en un paquete de GitHub
-on: 
-	push:
-		branches: main
+on: push
 jobs:
   push_to_registry:
     name: Publicar la imagen Docker a GitHub Packages
@@ -10,9 +8,8 @@ jobs:
       - name: Comprobar el repo
         uses: actions/checkout@v2
       - name: Publicar a GitHub Packages
-      	id: docker_build
         uses: docker/build-push-action@v2
         with:
           push: true
-         	tags: lgtbclub/lgtbclub:latest
+          tags: lgtbclub/lgtbclub:latest
 
