@@ -68,24 +68,29 @@ Se han tenido en cuenta los errores previos con respecto a enlazar demasiadas HU
 
 - He probado [Podman](https://github.com/containers/podman). Para ello, lo he instalado siguiendo las instrucciones del [sitio oficial](https://podman.io/getting-started/installation). A continuación, lo he utilizado dentro de la carpeta del repositorio, de forma análoga a cómo se usa *Docker*. También se utiliza el archivo *Dockerfile* para construir la imagen.
 
-```
-podman build -t anogueras/lgtbclub .
-```
+ ```
+ podman build -t anogueras/lgtbclub .
+ ```
 
-Al comprobar las imágenes creadas, vemos:
+ Al comprobar las imágenes creadas, vemos:
 
-![Podman images](./docs/imgs/podman.png "Podman images")
+ ![Podman images](./docs/imgs/podman.png "Podman images")
 
-El contenedor se ejecuta usando `podman run --rm -t localhost/anogueras/lgtbclub`.
+ El contenedor se ejecuta usando `podman run --rm -t localhost/anogueras/lgtbclub`.
 
 - Me he dado de alta en [*CircleCI*](https://circleci.com/) con mi cuenta de *GitHub*. Se trata de una plataforma para realizar integración continua. Profundizaré más en su funcionamiento para incorporar mi proyecto más adelante.
  
-- Para que la imagen de *Docker* genere un paquete automáticamente cada vez que hago `git push`, he recurrido a una *GitHub Action*. En primer lugar, he intentado crear una siguiendo varios tutoriales:
+- Para publicar la imagen de *Docker* en un paquete automáticamente cada vez que hago `git push`, he recurrido a una *GitHub Action*. En primer lugar, he intentado crear una siguiendo varios tutoriales:
 	- [Introducción a las *GitHub Actions*](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions).
 	- [Publicar imágenes *Docker*](https://docs.github.com/en/free-pro-team@latest/actions/guides/publishing-docker-images).
 	- [Configuración de *GitHub Actions*](https://docs.docker.com/ci-cd/github-actions/).
-Sin embargo, algunos de los comandos estaban obsoletos y no conseguía que funcionara. Finalmente, he utilizado una *GitHub Action* disponible [aquí](https://github.com/marketplace/actions/publish-docker-images-to-gpr).
-- Avance código.
+
+ Sin embargo, algunos de los comandos estaban obsoletos y no conseguía que funcionara. Finalmente, he utilizado una *GitHub Action* disponible [aquí](https://github.com/marketplace/actions/publish-docker-images-to-gpr).
+ 
+- En cuanto al avance del código, he añadido una nueva [HU](https://github.com/aure-nogueras/LGTBClub/issues/48) y he incorporado una nueva función y sus respectivos tests. Los archivos modificados son:
+	- [User.js](https://github.com/aure-nogueras/LGTBClub/blob/main/src/UserManagement/User.js).
+	- [testUser.js](https://github.com/aure-nogueras/LGTBClub/blob/main/src/UserManagement/testUser.js).
+	- [testUserMocha.js](https://github.com/aure-nogueras/LGTBClub/blob/main/src/UserManagement/testUserMocha.js). 
 
 ## Documentación
 
