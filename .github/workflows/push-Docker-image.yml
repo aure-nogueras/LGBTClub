@@ -8,7 +8,7 @@ jobs:
       - name: Comprobar el repo
         uses: actions/checkout@v2
       - name: Publicar a GitHub Packages
-        uses: docker/build-push-action@v1
+        uses: docker/build-push-action@v2
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.ACTION_TOKEN }}
