@@ -71,6 +71,18 @@ describe('User', function(){
 		});
 	});
 	
+	// Notificar de un error en un evento, que lo borra directamente
+	describe('Eliminar evento de la lista al notificar de error', function(){
+		it('Debería obtenerse una lista con ningún evento', function(){
+			var member = new user("Dylan", "lp_90@gmail.com", true);
+			var historicalEvent = new event("Orgullo bisexual", 2, 3, 2020, "Día de visibilización de la bisexualidad", "d_lara@gmail.com");
+			var controllerEH = new historyController();
+			controllerEH.addHistoricalEvent(historicalEvent);
+			member.notifyErrorHistoricalEvent(historicalEvent, controllerEH);
+			assert.equal(controllerEH.getHistoricalEventsList().length,"0");
+		});
+	});
+	
 	// Prueba que el usuario añade un término o experiencia correctamente
 	describe('Añadir término o experiencia a la lista', function(){
 		it('Debería obtenerse una lista con un término o experiencia', function(){
