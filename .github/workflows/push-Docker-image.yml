@@ -7,9 +7,14 @@ jobs:
     steps:
       - name: Comprobar el repo
         uses: actions/checkout@v2
+      - name: Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-push-action@v2
       - name: Publicar a GitHub Packages
         uses: docker/build-push-action@v2
         with:
+          context: ./
+          file: ./Dockerfile
           push: true
           tags: lgtbclub/lgtbclub:latest
 
