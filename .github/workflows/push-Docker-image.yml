@@ -1,7 +1,5 @@
 name: Publicar la imagen Docker en un paquete de GitHub
-on:
-  release:
-    types: [published]
+on: push
 jobs:
   push_to_registry:
     name: Publicar la imagen Docker a GitHub Packages
