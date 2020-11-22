@@ -58,6 +58,12 @@ class User{
 		}
 	}
 	
+	// Notificar error en evento histórico HU17
+	// De momento lo borra directamente, más adelante se harán más comprobaciones
+	notifyErrorHistoricalEvent(historicalEvent, historicalEventsList){
+		historicalEventsList.deleteHistoricalEvent(historicalEvent);
+	}
+	
 	// Suscribirse al servicio de mensajería como usuario HU6
 	addUser(usersList){
 		usersList.addUser(this);
