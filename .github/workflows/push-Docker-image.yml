@@ -20,6 +20,7 @@ jobs:
         with:
           context: ./
           file: ./Dockerfile
+          registry: docker.pkg.github.com
           push: true
           tags: anogueras/lgtbclub:latest
 
