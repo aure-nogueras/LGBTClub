@@ -66,9 +66,22 @@ Con esto, el paquete se ha publicado y aparece [aquí](https://github.com/aure-n
 
 Se han tenido en cuenta los errores previos con respecto a enlazar demasiadas HUs en el mismo commit y se ha reducido el tamaño de los mensajes siguiendo el estándar 50/80.
 
-- [Podman](https://github.com/containers/podman).
+- He probado [Podman](https://github.com/containers/podman). Para ello, lo he instalado siguiendo las instrucciones del [sitio oficial](https://podman.io/getting-started/installation). A continuación, lo he utilizado dentro de la carpeta del repositorio, de forma análoga a cómo se usa *Docker*. También se utiliza el archivo *Dockerfile* para construir la imagen.
+
+```
+podman build -t anogueras/lgtbclub .
+```
+
+Al comprobar las imágenes creadas, vemos:
+
+![Podman images](./docs/imgs/podman.png "Podman images")
+
+El contenedor se ejecuta usando `podman run --rm -t localhost/anogueras/lgtbclub`.
+
+- Me he dado de alta en [*CircleCI*](https://circleci.com/) con mi cuenta de *GitHub*. Se trata de una plataforma para realizar integración continua. Profundizaré más en su funcionamiento para incorporar mi proyecto más adelante.
+ 
 - GitHub Actions.
-- CircleCI.
+
 - Avance código.
 
 ## Documentación
