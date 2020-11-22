@@ -1,4 +1,25 @@
 ---  
-  name: "Publish Docker Images to GPR"
-  uses: machine-learning-apps/gpr-docker-publish@v1.3
+name: "Publish Docker Images to GPR"
+uses: machine-learning-apps/gpr-docker-publish@v1.3
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest 
+    steps:
+
+    - name: Copy Repo Files
+      uses: actions/checkout@main
+
+     #This Action Emits 2 Variables, IMAGE_SHA_NAME and IMAGE_URL 
+     #which you can reference in subsequent steps
+    - name: Publish Docker Image to GPR
+      uses: machine-learning-apps/gpr-docker-publish@main
+      id: docker
+      with:
+        IMAGE_NAME: 'lgtbclub'
+        TAG: 'latest'
+        DOCKERFILE_PATH: 'Dockerfile'
+        BUILD_CONTEXT: './'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_HUB_PASSWORD }}
 
