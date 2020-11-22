@@ -6,14 +6,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Comprobar el repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Publicar a GitHub Packages
         uses: docker/build-push-action@v1
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.ACTION_TOKEN }}
           registry: docker.pkg.github.com
-          repository: aure-nogueras/lgtbclub/lgtbclub:latest
+          repository: aure-nogueras/lgtbclub/lgtbclub
           tag_with_ref: true
 
 
