@@ -23,6 +23,9 @@ controllerEH.addHistoricalEvent(historicalEvent2);
 member.deleteHistoricalEvent(historicalEvent2, controllerEH);
 assert.equal(controllerEH.getHistoricalEventsList().length,"1");
 
+member.notifyErrorHistoricalEvent(historicalEvent2, controllerEH);
+assert.equal(controllerEH.getHistoricalEventsList().length,"0");
+
 var controllerIAE = new info();
 var experience1 = new experience("Trans", "Que no se identifica con el género asignado al nacer", "lp_90@gmail.com");
 member.addInfoAndExperiences(experience1, controllerIAE);
