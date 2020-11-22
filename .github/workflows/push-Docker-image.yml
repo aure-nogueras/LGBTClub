@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Comprobar el repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
       - name: Publicar a GitHub Packages
         uses: docker/build-push-action@v1
         with:
