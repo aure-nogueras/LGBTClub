@@ -45,9 +45,9 @@ A continuación, he creado un repositorio llamado *lgtbclub*. Lo he conectado co
 
 Se puede acceder a la imagen creada [aquí](https://hub.docker.com/r/anogueras/lgtbclub).
 
-## GitHub Container Registry
+## GitHub Docker Registry
 
-Además de subir la imagen a *Docker Hub*, he utilizado *GitHub Container Registry*. He elegido esta alternativa porque me permite enlazar los paquetes de *Docker* al propio repositorio en el que se encuentra el proyecto. He accedido a varias páginas para conocer el funcionamiento de este registro:
+Además de subir la imagen a *Docker Hub*, he utilizado *GitHub Docker Registry*. He elegido esta alternativa porque me permite enlazar los paquetes de *Docker* al propio repositorio en el que se encuentra el proyecto. He accedido a varias páginas para conocer el funcionamiento de este registro:
 
 - [Información sobre *GitHub Container Registry*](https://docs.github.com/es/free-pro-team@latest/packages/getting-started-with-github-container-registry/about-github-container-registry).
 - [Configurar *Docker* para usar *GitHub Packages*](https://docs.github.com/es/free-pro-team@latest/packages/using-github-packages-with-your-projects-ecosystem/configuring-docker-for-use-with-github-packages#authenticating-to-paquetes-de-github).
@@ -68,6 +68,7 @@ Se han tenido en cuenta los errores previos con respecto a enlazar demasiadas HU
 
 - [Podman](https://github.com/containers/podman).
 - GitHub Actions.
+- CircleCI.
 - Avance código.
 
 ## Documentación
