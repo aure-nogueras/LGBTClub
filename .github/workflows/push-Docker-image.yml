@@ -7,6 +7,11 @@ jobs:
     steps:
       - name: Comprobar el repo
         uses: actions/checkout@v2
+      - name: Entrar en Docker Hub
+        uses: docker/login-action@v1
+        with:
+          userna,e: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
       - name: Docker Buildx
         id: buildx
         uses: docker/setup-buildx-push-action@v2
