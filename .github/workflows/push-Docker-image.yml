@@ -15,7 +15,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.ACTION_TOKEN }}
           registry: docker.pkg.github.com
-          repository: aure-nogueras/lgtbclub/lgtbclub
+          repository: aure-nogueras/lgtbclub/lgtbclub:latest
           tag_with_ref: true
 
 
