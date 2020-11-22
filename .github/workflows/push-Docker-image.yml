@@ -1,3 +1,5 @@
-- name: Publish Docker Images to GPR
+--- 
+- 
+  name: "Publish Docker Images to GPR"
   uses: machine-learning-apps/gpr-docker-publish@v1.3
 
