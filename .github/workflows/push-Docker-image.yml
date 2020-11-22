@@ -1,26 +1,3 @@
-name: Publicar la imagen Docker en un paquete de GitHub
-on: push
-jobs:
-  push_to_registry:
-    name: Publicar la imagen Docker a GitHub Packages
-    runs-on: ubuntu-latest
-    steps:
-      - name: Comprobar el repo
-        uses: actions/checkout@v2
-      - name: Entrar en Docker Hub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-      - name: Docker Buildx
-        id: buildx
-        uses: docker/setup-buildx-action@v1
-      - name: Publicar a GitHub Packages
-        uses: docker/build-push-action@v2
-        with:
-          context: ./
-          file: ./Dockerfile
-          registry: docker.pkg.github.com
-          push: true
-          tags: anogueras/lgtbclub:latest
+- name: Publish Docker Images to GPR
+  uses: machine-learning-apps/gpr-docker-publish@v1.3
 
