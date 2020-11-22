@@ -80,8 +80,11 @@ El contenedor se ejecuta usando `podman run --rm -t localhost/anogueras/lgtbclub
 
 - Me he dado de alta en [*CircleCI*](https://circleci.com/) con mi cuenta de *GitHub*. Se trata de una plataforma para realizar integración continua. Profundizaré más en su funcionamiento para incorporar mi proyecto más adelante.
  
-- GitHub Actions.
-
+- Para que la imagen de *Docker* genere un paquete automáticamente cada vez que hago `git push`, he recurrido a una *GitHub Action*. En primer lugar, he intentado crear una siguiendo varios tutoriales:
+	- [Introducción a las *GitHub Actions*](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions).
+	- [Publicar imágenes *Docker*](https://docs.github.com/en/free-pro-team@latest/actions/guides/publishing-docker-images).
+	- [Configuración de *GitHub Actions*](https://docs.docker.com/ci-cd/github-actions/).
+Sin embargo, algunos de los comandos estaban obsoletos y no conseguía que funcionara. Finalmente, he utilizado una *GitHub Action* disponible [aquí](https://github.com/marketplace/actions/publish-docker-images-to-gpr).
 - Avance código.
 
 ## Documentación
