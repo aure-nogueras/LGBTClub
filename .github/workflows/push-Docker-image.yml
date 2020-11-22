@@ -1,4 +1,4 @@
-name: Publicar la imagen Docker en un paquete
+name: Publicar la imagen Docker en un paquete de GitHub
 on:
   release:
     types: [published]
