@@ -15,7 +15,7 @@ Como la simplicidad es una de las buenas prácticas que pueden seguirse en la vi
 
 ## Dockerfile
 
-Una vez seleccionado *alpine*, he creado la [primera versión](https://github.com/aure-nogueras/LGTBClub/commit/8650c8295a859ed535930b7ec9c6b37223b75f55) del *Dockerfile*. Para ello, he accedido a [esta página](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/). Siguiendo las recomendaciones, también he creado un archivo *.dockerignore*. Esto permite no incluir ciertos archivos en el *build context*, ahorrando espacio. [Aquí](https://codefresh.io/docker-tutorial/not-ignore-dockerignore-2/) se explica la importancia de incluir un *.dockerignore*. Además, he concatenado todos los *RUN* en uno para evitar crear capas innecesarias y ocupar más tamaño del necesario.
+Una vez seleccionado *alpine*, he creado la [primera versión](https://github.com/aure-nogueras/LGTBClub/commit/8650c8295a859ed535930b7ec9c6b37223b75f55) del *Dockerfile*. Para ello, he accedido a [esta página](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/). Siguiendo las recomendaciones, también he creado un archivo *.dockerignore*. Esto permite no incluir ciertos archivos en el *build context*, ahorrando espacio. [Aquí](https://codefresh.io/docker-tutorial/not-ignore-dockerignore-2/) se explica la importancia de incluir un *.dockerignore*. Además, he concatenado todos los *RUN* en uno para evitar crear capas innecesarias y ocupar más tamaño del necesario. He usado *npm install* para poder instalar *grunt* como gestor de tareas con las dependencias incluidas en el *package.json*.
 
 A continuación, he leído sobre las buenas prácticas. Estas son algunas de las páginas que he consultado:
 
