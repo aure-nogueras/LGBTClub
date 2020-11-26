@@ -21,4 +21,4 @@ COPY src ./src/
 COPY Gruntfile.js ./
 
 # Ejecuta grunt para los tests
-CMD grunt
+CMD grunt test

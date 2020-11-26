@@ -33,6 +33,10 @@ Dado que solo se instalan las dependencias requeridas para la ejecución de los 
 
 También he intentado usar *multi-stage builds* para optimizar. Sin embargo, recurrir a esta técnica no reducía el tamaño de la imagen creada. Todos los pasos del *Dockerfile* debían realizarse en el mismo escenario para que el contenedor pudiera ejecutarse correctamente.
 
+Por último, he utilizado *CMD grunt test* para ejecutar los tests. Esto se debe a que, en las [buenas prácticas](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/), viene especificado lo siguiente:
+
+**CMD should rarely be used in the manner of CMD ["param", "param"] in conjunction with ENTRYPOINT, unless you and your expected users are already quite familiar with how ENTRYPOINT works.**
+
 ## Docker Hub
 
 Para utilizar *Docker Hub*, he creado una cuenta y la he conectado con mi perfil de *GitHub*. No he podido elegir el mismo nombre que en *GitHub*, ya que tiene un carácter especial que no permitía. El nombre de la cuenta está incluido en el archivo [*DOCKER_USER*](https://github.com/aure-nogueras/LGTBClub/blob/main/DOCKER_USER).
