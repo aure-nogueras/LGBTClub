@@ -10,7 +10,7 @@ jobs:
     steps:
       - run: 
           name: Run tests
-          command: ls
+          command: grunt test
      
 version: 2.1
 workflows: 
