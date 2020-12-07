@@ -9,7 +9,7 @@ jobs:
     steps:
       - run: 
           name: Run tests
-          command: docker run --rm -t anogueras/lgtbclub
+          command: ls
      
 version: 2.1
 workflows: 
