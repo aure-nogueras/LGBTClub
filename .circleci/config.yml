@@ -1,19 +1,15 @@
 --- 
 jobs: 
-  install: 
-    steps: 
-      - checkout
-      - 
-        run: "npm install"
-  test: 
-    steps: 
-      - checkout
-      - 
-        run: "grunt test"
+  build: 
+    docker: 
+      - image: anogueras/lgtbclub:latest
+        auth:
+          username: $DOCKER_HUB_USERNAME
+          password: $DOCKER_HUB_PASSWORD
+     
 version: 2.1
 workflows: 
-  install_and_test: 
+  build_and_test: 
     jobs: 
-      - install
-      - test
+      - build
 
