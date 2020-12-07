@@ -1,7 +1,19 @@
+--- 
+jobs: 
+  install: 
+    steps: 
+      - checkout
+      - 
+        run: "npm install"
+  test: 
+    steps: 
+      - checkout
+      - 
+        run: "grunt test"
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
-workflows:
-  node-tests:
-    jobs:
-      - node/test
+workflows: 
+  install_and_test: 
+    jobs: 
+      - install
+      - test
+
