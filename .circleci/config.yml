@@ -9,7 +9,7 @@ jobs:
     steps:
       - run: 
           name: Run tests
-          command: npm install && grunt test
+          command: docker run --rm -t anogueras/lgtbclub
      
 version: 2.1
 workflows: 
