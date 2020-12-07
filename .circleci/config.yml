@@ -9,7 +9,7 @@ jobs:
     steps:
       - run: 
           name: Run tests
-          command: grunt test
+          command: npm install && grunt test
      
 version: 2.1
 workflows: 
