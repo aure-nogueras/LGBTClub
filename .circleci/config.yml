@@ -6,6 +6,10 @@ jobs:
         auth:
           username: $DOCKER_HUB_USERNAME
           password: $DOCKER_HUB_PASSWORD
+    steps:
+      - run: 
+          name: Run tests
+          command: grunt test
      
 version: 2.1
 workflows: 
