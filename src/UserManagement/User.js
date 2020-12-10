@@ -20,47 +20,80 @@ class User{
 	
 	// Saber si se está suscrito al servicio, relacionado con HU18
 	getSuscription(){
-		return subscribed;
+		return this.subscribed;
+	}
+	
+	// Asignar un nuevo valor a la suscripción del usuario
+	// Relacionado con #55
+	setSuscription(subscribed){
+		this.subscribed = subscribed;
 	}
 	
 	// Añadir un evento histórico como usuario HU1
+	// Comprobar suscripción #55
 	addHistoricalEvent(historicalEvent, historicalEventsList){
-		historicalEventsList.addHistoricalEvent(historicalEvent);
+		if(this.subscribed){
+			historicalEventsList.addHistoricalEvent(historicalEvent);
+		}else{
+			console.log("El usuario no está suscrito al servicio");
+		}
 	}
 	
 	// Añadir términos como usuario LGTB HU2
+	// Comprobar suscripción #55
 	addInfoAndExperiences(experience, infoAndExperiencesList){
-		if(this.getUserLGTB() && ){
+		if(this.getUserLGTB() && this.subscribed){
 			infoAndExperiencesList.addInfoAndExperiences(experience);
 		}else{
-			console.log("Este usuario no puede añadir términos ni experiencias porque no es LGTB");
+			if(!this.getUserLGTB()){
+				console.log("Este usuario no puede añadir términos ni experiencias porque no es LGTB");
+			}
+			if(!this.subscribed){
+				console.log("El usuario no está suscrito al servicio");
+			}
 		}
 	}
 	
 	// Eliminar un evento histórico como usuario HU3
+	// Comprobar suscripción #55
 	deleteHistoricalEvent(historicalEvent, historicalEventsList){
-		if(historicalEvent.getEmail() == this.email){
+		if(historicalEvent.getEmail() == this.email && this.subscribed()){
 			historicalEventsList.deleteHistoricalEvent(historicalEvent);
 		}else{
-			console.log("Este usuario no ha creado este evento, así que no puede eliminarlo");
+			if(historicalEvent.getEmail() != this.email){
+				console.log("Este usuario no ha creado este evento, así que no puede eliminarlo");
+			}
+			if(!this.subscribed){
+				console.log("El usuario no está suscrito al servicio");
+			}
 		}
 	}
 	
 	// Eliminar un término como usuario LGTB HU4
+	// Comprobar suscripción #55
 	deleteInfoAndExperiences(experience, infoAndExperiencesList){
-		if(experience.getEmail() == this.email && this.getUserLGTB()){
-			infoAndExperiencesList.deleteInfoAndExperiences(experience);
+		if(this.subscribed){
+			if(experience.getEmail() == this.email && this.getUserLGTB()){
+				infoAndExperiencesList.deleteInfoAndExperiences(experience);
+			}else{
+				console.log("Este usuario no ha creado este término o no es LGTB, así que no puede borrarlo");
+			}
 		}else{
-			console.log("Este usuario no ha creado este término o no es LGTB, así que no puede borrarlo");
+			console.log("El usuario no está suscrito al servicio");
 		}
 	}
 	
 	// Modificar un término como usuario LGTB HU5
+	// Comprobar suscripción #55
 	modifyInfoAndExperiences(experience, description, infoAndExperiencesList){
-		if(experience.getEmail() == this.email && this.getUserLGTB()){
-			infoAndExperiencesList.modifyInfoAndExperiences(experience, description);
+		if(this.subscribed){
+			if(experience.getEmail() == this.email && this.getUserLGTB()){
+				infoAndExperiencesList.modifyInfoAndExperiences(experience, description);
+			}else{
+				console.log("Este usuario no ha creado este término o no es LGTB, así que no puede modificarlo");
+			}
 		}else{
-			console.log("Este usuario no ha creado este término o no es LGTB, así que no puede modificarlo");
+			console.log("El usuario no está suscrito al servicio");
 		}
 	}
 	
