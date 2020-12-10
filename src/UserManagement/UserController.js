@@ -29,6 +29,7 @@ class UserController{
 	addUser(member){
 		if(!this.isAdded(member)){
 			this.usersList.push(member);
+			member.setSuscription(true);
 		}else{
 			console.log("Ese usuario ya está añadido");
 		}
