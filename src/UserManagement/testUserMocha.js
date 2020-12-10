@@ -41,7 +41,7 @@ describe('User', function(){
 	describe('Obtener si el usuario está suscrito', function(){
 		it('Debería obtener si el usuario está suscrito o no de forma correcta', function(){
 			var member = new user("Dylan", "lp_90@gmail.com", true);
-			assert.equal(member.getSuscription(), false);
+			assert.equal(member.getSubscription(), false);
 		});
 	});
 	

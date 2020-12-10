@@ -45,6 +45,7 @@ describe('UserController', function(){
 			var listUsers = new usersList();
 			listUsers.addUser(member);
 			assert.equal(listUsers.isAdded(member), true);
+			assert.equal(member.getSubscription(), true);
 		});
 	});
 	

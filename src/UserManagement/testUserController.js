@@ -16,6 +16,7 @@ assert.equal(listUsers.isAdded(member), false);
 listUsers.addUser(member);
 assert.equal(listUsers.getUsersList().length, "1");
 assert.equal(listUsers.isAdded(member), true);
+assert.equal(member.getSubscription(), true);
 
 listUsers.addUser(member2);
 listUsers.deleteUser(member);
