@@ -9,12 +9,18 @@ class User{
 		this.name = name;
 		this.email = email;
 		this.isLGTB = isLGTB;
+		this.subscribed = false;
 	}
 	
 	// Hay dos tipos de usuarios, LGTB y no LGTB
 	// El get nos servirá para obtener el tipo
 	getUserLGTB(){
 		return this.isLGTB;
+	}
+	
+	// Saber si se está suscrito al servicio, relacionado con HU18
+	getSuscription(){
+		return subscribed;
 	}
 	
 	// Añadir un evento histórico como usuario HU1
@@ -24,7 +30,7 @@ class User{
 	
 	// Añadir términos como usuario LGTB HU2
 	addInfoAndExperiences(experience, infoAndExperiencesList){
-		if(this.getUserLGTB()){
+		if(this.getUserLGTB() && ){
 			infoAndExperiencesList.addInfoAndExperiences(experience);
 		}else{
 			console.log("Este usuario no puede añadir términos ni experiencias porque no es LGTB");
