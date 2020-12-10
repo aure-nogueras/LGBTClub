@@ -16,7 +16,7 @@ El primer sistema de integración continua utilizado para este proyecto es *Trav
 
 A continuación, he seguido los pasos indicados [aquí](https://docs.travis-ci.com/user/tutorial/?utm_source=help-page&utm_medium=travisweb). Primero he accedido a los *settings* de mi perfil en *Travis*. Una vez ahí, se despliega una lista con mis repositorios. He seleccionado el repositorio correspondiente al proyecto, [*LGTBClub*](https://github.com/aure-nogueras/LGTBClub).
 
-![Activación de Travis en el repositorio](./docs/imgs/lgbt_club.png "Activación de Travis en el repositorio")
+![Activación de Travis en el repositorio](./docs/imgs/lgtb_club.png "Activación de Travis en el repositorio")
 
 Por último, he creado el archivo [*.travis.yml*](https://github.com/aure-nogueras/LGTBClub/blob/main/.travis.yml) y lo añado al repositorio. Este es su contenido:
 
