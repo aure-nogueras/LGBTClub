@@ -37,10 +37,20 @@ describe('User', function(){
 		});
 	});
 	
+	// Prueba que se modifica correctamente la suscripción del usuario
+	describe('Modificar la suscripción del usuario', function(){
+		it('Debería cambiar la suscripción del usuario de forma correcta', function(){
+			var member = new user("Dylan", "lp_90@gmail.com", true);
+			member.setSubscription(true);
+			assert.equal(member.getSubscription(), true);
+		});
+	});
+	
 	// Prueba que el usuario añade un evento histórico correctamente
 	describe('Añadir evento a la lista', function(){
 		it('Debería obtenerse una lista con un evento histórico', function(){
 			var member = new user("Dylan", "lp_90@gmail.com", true);
+			member.setSubscription(true);
 			var historicalEvent = new event("Día del orgullo", 28, 6, 2020, "Día de celebración y reclamación de los derechos del colectivo", "lp_90@gmail.com");
 			var controllerEH = new historyController();
 			member.addHistoricalEvent(historicalEvent, controllerEH);
@@ -52,6 +62,7 @@ describe('User', function(){
 	describe('Eliminar evento de la lista', function(){
 		it('Debería obtenerse una lista con ningún evento histórico', function(){
 			var member = new user("Dylan", "lp_90@gmail.com", true);
+			member.setSubscription(true);
 			var historicalEvent = new event("Día del orgullo", 28, 6, 2020, "Día de celebración y reclamación de los derechos del colectivo", "lp_90@gmail.com");
 			var controllerEH = new historyController();
 			member.deleteHistoricalEvent(historicalEvent, controllerEH);
@@ -63,6 +74,7 @@ describe('User', function(){
 	describe('Eliminar evento de la lista sin ser su autor', function(){
 		it('Debería obtenerse una lista con un evento, ya que el usuario no puede borrarlo', function(){
 			var member = new user("Dylan", "lp_90@gmail.com", true);
+			member.setSubscription(true);
 			var historicalEvent2 = new event("Orgullo bisexual", 23, 9, 2020, "Día de visibilización de la bisexualidad", "d_lara@gmail.com");
 			var controllerEH = new historyController();
 			controllerEH.addHistoricalEvent(historicalEvent2);
@@ -75,6 +87,7 @@ describe('User', function(){
 	describe('Eliminar evento de la lista al notificar de error', function(){
 		it('Debería obtenerse una lista con ningún evento', function(){
 			var member = new user("Dylan", "lp_90@gmail.com", true);
+			member.setSubscription(true);
 			var historicalEvent = new event("Orgullo bisexual", 2, 3, 2020, "Día de visibilización de la bisexualidad", "d_lara@gmail.com");
 			var controllerEH = new historyController();
 			controllerEH.addHistoricalEvent(historicalEvent);
@@ -87,6 +100,7 @@ describe('User', function(){
 	describe('Añadir término o experiencia a la lista', function(){
 		it('Debería obtenerse una lista con un término o experiencia', function(){
 			var member = new user("Dylan", "lp_90@gmail.com", true);
+			member.setSubscription(true);
 			var controllerIAE = new infoController();
 			var experience = new info("Trans", "Que no se identifica con el género asignado al nacer", "lp_90@gmail.com");
 			member.addInfoAndExperiences(experience, controllerIAE);
@@ -98,6 +112,7 @@ describe('User', function(){
 	describe('Añadir término o experiencia de la lista', function(){
 		it('Debería obtenerse una lista con ningún término o experiencia, ya que el usuario no puede añadir nada al no ser LGTB', function(){
 			var member = new user("Laura", "l_jimenez@gmail.com", false);
+			member.setSubscription(true);
 			var controllerIAE = new infoController();
 			var experience = new info("Trans", "Que no se identifica con el género asignado al nacer", "lp_90@gmail.com");
 			member.addInfoAndExperiences(experience, controllerIAE);
@@ -109,6 +124,7 @@ describe('User', function(){
 	describe('Eliminar término o experiencia a la lista', function(){
 		it('Debería obtenerse una lista con ningún término o experiencia', function(){
 			var member = new user("Dylan", "lp_90@gmail.com", true);
+			member.setSubscription(true);
 			var controllerIAE = new infoController();
 			var experience = new info("Trans", "Que no se identifica con el género asignado al nacer", "lp_90@gmail.com");
 			member.addInfoAndExperiences(experience, controllerIAE);
@@ -121,6 +137,7 @@ describe('User', function(){
 	describe('Modificar término o experiencia de la lista como autor', function(){
 		it('Debería obtenerse una lista con un término o experiencia con la descripción modificada', function(){
 			var member = new user("Dylan", "lp_90@gmail.com", true);
+			member.setSubscription(true);
 			var controllerIAE = new infoController();
 			var experience = new info("Trans", "Que no se identifica con el género asignado al nacer", "lp_90@gmail.com");
 			member.addInfoAndExperiences(experience, controllerIAE);

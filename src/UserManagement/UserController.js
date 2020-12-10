@@ -29,7 +29,7 @@ class UserController{
 	addUser(member){
 		if(!this.isAdded(member)){
 			this.usersList.push(member);
-			member.setSuscription(true);
+			member.setSubscription(true);
 		}else{
 			console.log("Ese usuario ya está añadido");
 		}
@@ -39,7 +39,7 @@ class UserController{
 	deleteUser(member){
 		let pos = this.usersList.indexOf(member);
 		this.usersList.splice(member, 1);
-		member.setSuscription(false);
+		member.setSubscription(false);
 	}
 	
 	// Modificar los datos de un usuario HU15

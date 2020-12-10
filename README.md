@@ -36,6 +36,17 @@ script:
 
 ## Configuración de un sistema de integración continua adicional
 
+https://docs.github.com/en/free-pro-team@latest/actions/guides/about-continuous-integration
+
+https://docs.github.com/en/free-pro-team@latest/actions/guides/setting-up-continuous-integration-using-workflow-templates
+
+https://developer.github.com/changes/2018-05-07-new-checks-api-public-beta/
+
+https://circleci.com/docs/2.0/enable-checks/
+
+https://dev.to/robdwaller/how-to-add-a-github-actions-badge-to-your-project-11ci
+
+https://docs.github.com/es/free-pro-team@latest/actions/managing-workflow-runs/adding-a-workflow-status-badge
 
 ## Uso correcto del gestor de tareas en la integración continua
 

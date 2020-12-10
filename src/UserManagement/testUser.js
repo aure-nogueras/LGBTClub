@@ -11,6 +11,8 @@ assert(member, "Creado usuario");
 assert.equal(member.getUserLGTB(), true);
 
 var historicalEvent = new event("Día del orgullo", 28, 6, 2020, "Día de celebración y reclamación de los derechos del colectivo", "lp_90@gmail.com");
+member.setSubscription(true);
+assert.equal(member.getSubscription(), true);
 var controllerEH = new history();
 member.addHistoricalEvent(historicalEvent, controllerEH);
 assert.equal(controllerEH.getHistoricalEventsList().length,"1");
@@ -46,12 +48,16 @@ assert.equal(controllerIAE.getInfoAndExperiencesList().length,"1");
 var member2 = new user("Laura", "l_jimenez@gmail.com", false);
 assert(member2, "Creado usuario");
 assert.equal(member2.getUserLGTB(), false);
+assert.equal(member2.getSubscription(), false);
+member2.setSubscription(true);
 
 member2.modifyInfoAndExperiences(experience2, "Cambio en la descripción", controllerIAE);
 assert.equal(experience2.getDescription(), "Orientación sexual que indica atracción por el propio género y el resto");
 
 
 var listUsers = new usersList();
+member.setSubscription(false);
+member2.setSubscription(false);
 member.addUser(listUsers);
 assert.equal(listUsers.getUsersList().length, "1");
 
