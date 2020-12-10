@@ -56,6 +56,7 @@ describe('UserController', function(){
 			var listUsers = new usersList();
 			listUsers.addUser(member);
 			assert.equal(listUsers.getUsersList().length, "1");
+			assert.equal(member.getSubscription(), true);
 		});
 	});
 	
@@ -67,6 +68,7 @@ describe('UserController', function(){
 			listUsers.addUser(member);
 			listUsers.deleteUser(member);
 			assert.equal(listUsers.getUsersList().length, "0");
+			assert.equal(member.getSubscription(), false);
 		});
 	});
 	

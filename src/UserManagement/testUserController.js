@@ -20,6 +20,7 @@ assert.equal(member.getSubscription(), true);
 
 listUsers.addUser(member2);
 listUsers.deleteUser(member);
+assert.equal(member.getSubscription(), false);
 assert.equal(listUsers.getUsersList().length, "1");
 
 listUsers.modifyUser(member2, member);
