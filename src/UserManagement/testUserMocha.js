@@ -37,6 +37,14 @@ describe('User', function(){
 		});
 	});
 	
+	// Prueba que el hecho de que el usuario esté suscrito se almacene bien
+	describe('Obtener si el usuario está suscrito', function(){
+		it('Debería obtener si el usuario está suscrito o no de forma correcta', function(){
+			var member = new user("Dylan", "lp_90@gmail.com", true);
+			assert.equal(member.getSuscription(), false);
+		});
+	});
+	
 	// Prueba que se modifica correctamente la suscripción del usuario
 	describe('Modificar la suscripción del usuario', function(){
 		it('Debería cambiar la suscripción del usuario de forma correcta', function(){
