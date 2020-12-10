@@ -39,6 +39,7 @@ class UserController{
 	deleteUser(member){
 		let pos = this.usersList.indexOf(member);
 		this.usersList.splice(member, 1);
+		member.setSuscription(false);
 	}
 	
 	// Modificar los datos de un usuario HU15
