@@ -2,7 +2,7 @@
 
 Proyecto de desarrollo de un sistema de divulgación de información del colectivo LGTB :rainbow_flag:.
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Build Status](https://travis-ci.org/aure-nogueras/LGTBClub.svg?branch=main)](https://travis-ci.org/github/aure-nogueras/LGTBClub) [![CircleCI](https://circleci.com/gh/aure-nogueras/LGTBClub.svg?style=shield)](https://app.circleci.com/pipelines/github/aure-nogueras/LGTBClub?branch=main) [![GitHub Action CI](https://github.com/aure-nogueras/LGTBClub/workflows/Node.js%20CI/badge.svg)](https://github.com/aure-nogueras/LGTBClub/actions)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Build Status](https://travis-ci.com/aure-nogueras/LGTBClub.svg?branch=main)](https://travis-ci.com/github/aure-nogueras/LGTBClub) [![CircleCI](https://circleci.com/gh/aure-nogueras/LGTBClub.svg?style=shield)](https://app.circleci.com/pipelines/github/aure-nogueras/LGTBClub?branch=main) [![GitHub Action CI](https://github.com/aure-nogueras/LGTBClub/workflows/Node.js%20CI/badge.svg)](https://github.com/aure-nogueras/LGTBClub/actions)
 
 La descripción del problema se puede consultar [aquí](https://aure-nogueras.github.io/LGTBClub/docs/descripcion_problema).
 
@@ -33,6 +33,7 @@ script:
 
 ```
 
+En este archivo compruebo las versiones 10, 12 y 14.4.0 de *Node.js*. La versión 10 sería la primera a partir de la cual se usaría la aplicación. La 14.4.0 es la última versión que tengo instalada localmente. 
 
 ## Configuración de un sistema de integración continua adicional
 
@@ -75,7 +76,7 @@ workflows:
 
 ```
 
-Con este archivo de configuración, uso la imagen creada en *Docker* para ejecutar los tests de la aplicación. Cada vez que hago un nuevo *push* en el repositorio, puedo ver los resultados en *CircleCI*.
+Con este archivo de configuración, uso la imagen creada en *DockerHub* para ejecutar los tests de la aplicación. Cada vez que hago un nuevo *push* en el repositorio, puedo ver los resultados en *CircleCI*.
 
 ![Resultados de los tests en CircleCI](./docs/imgs/circle-test.png "Resultados de los tests en CircleCI")
 
@@ -83,20 +84,37 @@ También he añadido el *badge* a este README.md y he activado el *checks API* c
 
 ![Activación de Checks API](./docs/imgs/checks-api.png "Activación de Checks API")
 
-## Uso correcto del gestor de tareas en la integración continua
-
-https://docs.github.com/en/free-pro-team@latest/actions/guides/about-continuous-integration
-
-https://docs.github.com/en/free-pro-team@latest/actions/guides/setting-up-continuous-integration-using-workflow-templates
-
-https://developer.github.com/changes/2018-05-07-new-checks-api-public-beta/
-
-https://dev.to/robdwaller/how-to-add-a-github-actions-badge-to-your-project-11ci
-
-https://docs.github.com/es/free-pro-team@latest/actions/managing-workflow-runs/adding-a-workflow-status-badge
-
 
 ## Aprovechamiento del contenedor de Docker 
+
+Como se ha indicado en el punto anterior, he utilizado *Docker* en *CircleCI*. De este modo, aprovecho la imagen creada para automatizar la ejecución de los tests del proyecto. Para ello, el archivo de configuración indica las claves de acceso para acceder *DockerHub* y descargar la última versión. 
+
+```
+docker: 
+  - image: anogueras/lgtbclub:latest
+    auth:
+      username: $DOCKER_HUB_USERNAME
+      password: $DOCKER_HUB_PASSWORD
+```
+
+A continuación, se establece el directorio de trabajo en `/app`. 
+
+```
+ working_directory: /app
+```
+
+Desde ahí se ejecutan los tests.
+
+```
+steps:
+    - run: 
+        name: Run tests
+        command: grunt test
+```
+
+## Uso correcto del gestor de tareas en la integración continua
+
+En los tres sistemas de integración continua utilizados (*Travis*, *CircleCI* y *GitHub Actions*), se ejecutan los tests del proyecto haciendo uso del gestor de tareas. En este caso, el comando utilizado es `grunt test`. Esto activa la ejecución de los tests y permite comprobar si funcionan adecuadamente, tal y como puede verse en los *badges*.
 
 ## Avance del proyecto
 
@@ -117,7 +135,44 @@ Además de esto, he avanzado el proyecto en dos puntos:
 
   Los cambios pueden consultarse en los commits.
 
-- He añadido un tercer sistema de integración continua mediante las *GitHub Actions*.
+- He añadido un tercer sistema de integración continua mediante las *GitHub Actions*. Para ello, he consultado los siguientes enlaces:
+
+	- [Integración continua con *GitHub Actions*](https://docs.github.com/en/free-pro-team@latest/actions/guides/about-continuous-integration).
+	- [*Workflow* para CI con *GitHub Actions*](https://docs.github.com/en/free-pro-team@latest/actions/guides/setting-up-continuous-integration-using-workflow-templates).
+	- [Añadir un *badge* para una *GitHub Action*](https://dev.to/robdwaller/how-to-add-a-github-actions-badge-to-your-project-11ci).
+	- [Incluir el estado de una *GitHub Actions* en el repositorio](https://docs.github.com/es/free-pro-team@latest/actions/managing-workflow-runs/adding-a-workflow-status-badge).
+	
+  He tomado como plantilla el *workflow* de CI para *Node.js*. De este modo, solo he tenido que llevar a cabo unas pequeñas modificaciones para que todo funcionara correctamente. Este es el contenido de [**node.js.yml**](https://github.com/aure-nogueras/LGTBClub/blob/main/.github/workflows/node.js.yml):
+  
+```
+  name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: grunt test
+```
+
+  Pasa los tests para las versiones 10, 12 y 14 de *Node.js*, al igual que en *Travis*. Para ello, toma la rama *main*, copia el repositorio e indica la versión de *node*. A continuación, instala lo necesario con `npm install` (como por ejemplo el gestor de tareas *grunt*). Y, por último, ejecuta los tests con `grunt test`.
 
 ## Documentación
 
