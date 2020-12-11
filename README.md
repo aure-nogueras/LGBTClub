@@ -36,23 +36,75 @@ script:
 
 ## Configuración de un sistema de integración continua adicional
 
-https://docs.github.com/en/free-pro-team@latest/actions/guides/about-continuous-integration
+El segundo sistema que he elegido para realizar la integración continua ha sido [*CircleCI*](https://circleci.com/). Esto se debe a varios motivos. En primer lugar, se trata de un sistema en la nube en el que se puede utilizar la propia cuenta de *GitHub* para conectar los repositorios deseados. Además, al igual que con *Travis*, permite activar el *checks API*. Esto implica que se puede consultar desde el repositorio de *GitHub* el estado de la integración y el funcionamiento de los tests. De este modo, se puede consultar el *build* en cualquier momento sin tener que acceder a *CircleCI* directamente. Para añadir esto a mi repositorio he consultado [esta página](https://circleci.com/docs/2.0/enable-checks/).
 
-https://docs.github.com/en/free-pro-team@latest/actions/guides/setting-up-continuous-integration-using-workflow-templates
+Para configurar *CircleCI*, se han seguido unos pasos muy similares a los llevados a cabo en *Travis*. En primer lugar, he accedido a la página conectándome con mi perfil de *GitHub*. 
 
-https://developer.github.com/changes/2018-05-07-new-checks-api-public-beta/
+![Acceso a CircleCI](./docs/imgs/circle-github.png "Acceso a CircleCI")
 
-https://circleci.com/docs/2.0/enable-checks/
+En los ajustes puede comprobarse que, efectivamente, el perfil está conectado a *GitHub*.
 
-https://dev.to/robdwaller/how-to-add-a-github-actions-badge-to-your-project-11ci
+![Perfil en CircleCI](./docs/imgs/settings-github.png "Perfil en CircleCI")
 
-https://docs.github.com/es/free-pro-team@latest/actions/managing-workflow-runs/adding-a-workflow-status-badge
+A continuación, he activado el repositorio del proyecto en el que voy a aplicar la integración continua. En este caso, he accedido a todos mis repositorios desde la pestaña *Projects* y he seleccionado el correspondiente a [*LGTBClub*](https://github.com/aure-nogueras/LGTBClub) integración continua con *CircleCI*.
+
+![Proyecto activado en CircleCI](./docs/imgs/circle-project.png "Proyecto activado en CircleCI")
+
+Por último, he creado una carpeta [*.circleci*](https://github.com/aure-nogueras/LGTBClub/tree/main/.circleci) en mi proyecto, donde he guardado el archivo de configuración [*config.yml*](https://github.com/aure-nogueras/LGTBClub/blob/main/.circleci/config.yml). Este es el contenido de dicho archivo:
+
+```
+--- 
+jobs: 
+  build: 
+    docker: 
+      - image: anogueras/lgtbclub:latest
+        auth:
+          username: $DOCKER_HUB_USERNAME
+          password: $DOCKER_HUB_PASSWORD
+    working_directory: /app
+    steps:
+      - run: 
+          name: Run tests
+          command: grunt test
+     
+version: 2.1
+workflows: 
+  build_and_test: 
+    jobs: 
+      - build
+
+```
+
+Con este archivo de configuración, uso la imagen creada en *Docker* para ejecutar los tests de la aplicación. Cada vez que hago un nuevo *push* en el repositorio, puedo ver los resultados en *CircleCI*.
+
+![Resultados de los tests en CircleCI](./docs/imgs/circle-test.png "Resultados de los tests en CircleCI")
+
+También he añadido el *badge* a este README.md y he activado el *checks API* como se puede ver en la imagen.
+
+![Activación de Checks API](./docs/imgs/check.png "Activación de Checks API")
 
 ## Uso correcto del gestor de tareas en la integración continua
 
 ## Aprovechamiento del contenedor de Docker 
 
 ## Avance del proyecto
+
+Además de esto, he avanzado el proyecto en dos puntos:
+
+- He incorporado nuevas funciones y tests al código, relativas a comprobar si un usuario está suscrito al servicio de mensajería. Para ello, he creado la HU18 y un nuevo issue.
+	- [HU18 Saber si estoy suscrito como usuario](https://github.com/aure-nogueras/LGTBClub/issues/56).
+	- [Como desarrollador, quiero comprobar que cualquier modificación es realizada por un usuario suscrito](https://github.com/aure-nogueras/LGTBClub/issues/55).
+  Esto ha introducido cambios en las siguientes clases:
+  	- [User.js](https://github.com/aure-nogueras/LGTBClub/blob/main/src/UserManagement/User.js).
+  	- [UserController.js](https://github.com/aure-nogueras/LGTBClub/blob/main/src/UserManagement/UserController.js).
+  	- [testUser.js](https://github.com/aure-nogueras/LGTBClub/blob/main/src/UserManagement/testUser.js).
+  	- [testUserController.js](https://github.com/aure-nogueras/LGTBClub/blob/main/src/UserManagement/testUserController.js).
+  	- [testUserControllerMocha.js](https://github.com/aure-nogueras/LGTBClub/blob/main/src/UserManagement/testUserControllerMocha.js).
+  	- [testUserMocha.js](https://github.com/aure-nogueras/LGTBClub/blob/main/src/UserManagement/testUserMocha.js).
+
+  Los cambios pueden consultarse en los commits.
+
+- He añadido un tercer sistema de integración continua mediante las *GitHub Actions*.
 
 ## Documentación
 
