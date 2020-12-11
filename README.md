@@ -81,9 +81,11 @@ Con este archivo de configuración, uso la imagen creada en *Docker* para ejecut
 
 También he añadido el *badge* a este README.md y he activado el *checks API* como se puede ver en la imagen.
 
-![Activación de Checks API](./docs/imgs/check.png "Activación de Checks API")
+![Activación de Checks API](./docs/imgs/checks-api.png "Activación de Checks API")
 
 ## Uso correcto del gestor de tareas en la integración continua
+
+
 
 ## Aprovechamiento del contenedor de Docker 
 
