@@ -86,7 +86,6 @@ También he añadido el *badge* a este README.md y he activado el *checks API* c
 ## Uso correcto del gestor de tareas en la integración continua
 
 
-
 ## Aprovechamiento del contenedor de Docker 
 
 ## Avance del proyecto
@@ -96,7 +95,9 @@ Además de esto, he avanzado el proyecto en dos puntos:
 - He incorporado nuevas funciones y tests al código, relativas a comprobar si un usuario está suscrito al servicio de mensajería. Para ello, he creado la HU18 y un nuevo issue.
 	- [HU18 Saber si estoy suscrito como usuario](https://github.com/aure-nogueras/LGTBClub/issues/56).
 	- [Como desarrollador, quiero comprobar que cualquier modificación es realizada por un usuario suscrito](https://github.com/aure-nogueras/LGTBClub/issues/55).
+  
   Esto ha introducido cambios en las siguientes clases:
+  
   	- [User.js](https://github.com/aure-nogueras/LGTBClub/blob/main/src/UserManagement/User.js).
   	- [UserController.js](https://github.com/aure-nogueras/LGTBClub/blob/main/src/UserManagement/UserController.js).
   	- [testUser.js](https://github.com/aure-nogueras/LGTBClub/blob/main/src/UserManagement/testUser.js).
