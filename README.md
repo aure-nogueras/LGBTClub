@@ -83,6 +83,8 @@ También he añadido el *badge* a este README.md y he activado el *checks API* c
 
 ![Activación de Checks API](./docs/imgs/checks-api.png "Activación de Checks API")
 
+**Nota:** el *badge* de *CircleCI* muestra últimamente un estado incorrecto (indica que falla aunque realmente pasa los tests). He configurado el *Checks API* tal y como explico aquí, y todo funciona correctamente, así que no sé a qué puede deberse este fallo.
+
 
 ## Aprovechamiento del contenedor de Docker 
 
