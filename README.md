@@ -23,17 +23,16 @@ Por último, he creado el archivo [*.travis.yml*](https://github.com/aure-noguer
 ```
 language: node_js
 node_js:
-- "10"
-- "12"
-- "14.4.0"
+- "node"
+- "lts/*"
 install:
-- npm install
+- npm ci
 script:
 - grunt test
 
 ```
 
-En este archivo compruebo las versiones 10, 12 y 14.4.0 de *Node.js*. La versión 10 sería la primera a partir de la cual se usaría la aplicación. La 14.4.0 es la última versión que tengo instalada localmente. 
+En este archivo compruebo las versiones `node` y `lts` de *Node.js*. La versión `node` es la estable actual, mientras que la `lts` es la versión más reciente de LTS (Long Term Support). Además, tenemos que utilizar `npm ci` para poder instalar el gestor de tareas, desde el que se ejecutarán los tests. No se utilizan versiones anteriores porque no soportan `npm ci`.
 
 ## Configuración de un sistema de integración continua adicional
 
@@ -56,7 +55,7 @@ Por último, he creado una carpeta [*.circleci*](https://github.com/aure-noguera
 ```
 --- 
 jobs: 
-  build: 
+  build_and_test: 
     docker: 
       - image: anogueras/lgtbclub:latest
         auth:
@@ -72,7 +71,7 @@ version: 2.1
 workflows: 
   build_and_test: 
     jobs: 
-      - build
+      - build_and_test
 
 ```
 
@@ -160,7 +159,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: [14.x, 15.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -168,11 +167,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
+    - run: npm ci
     - run: grunt test
 ```
 
-  Pasa los tests para las versiones 10, 12 y 14 de *Node.js*, al igual que en *Travis*. Para ello, toma la rama *main*, copia el repositorio e indica la versión de *node*. A continuación, instala lo necesario con `npm install` (como por ejemplo el gestor de tareas *grunt*). Y, por último, ejecuta los tests con `grunt test`.
+  Pasa los tests para las versiones 14 y 15 de *Node.js*. Esto se debe a que versiones previas no soportan `npm ci`. Para ello, toma la rama *main*, copia el repositorio e indica la versión de *node*. A continuación, instala lo necesario con `npm ci` (como por ejemplo el gestor de tareas *grunt*). Y, por último, ejecuta los tests con `grunt test`.
 
 ## Documentación
 

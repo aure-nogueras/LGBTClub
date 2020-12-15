@@ -1,7 +1,7 @@
 # Circle CI 
 --- 
 jobs: 
-  build: 
+  build_and_test: 
     docker: 
       - image: anogueras/lgtbclub:latest
         auth:
@@ -17,5 +17,5 @@ version: 2.1
 workflows: 
   build_and_test: 
     jobs: 
-      - build
+      - build_and_test
 

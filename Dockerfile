@@ -10,7 +10,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Se instalan las dependencias
-RUN apk add --update nodejs nodejs-npm && npm install && npm install -g grunt-cli
+RUN apk add --update nodejs nodejs-npm && npm ci && npm install -g grunt-cli
 
 # Se añade un usuario para ejecutar sin permisos de superusuario
 RUN adduser -D lgtb
