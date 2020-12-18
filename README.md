@@ -34,6 +34,30 @@ script:
 
 En este archivo compruebo las versiones `node` y `lts` de *Node.js*. La versión `node` es la estable actual, mientras que la `lts` es la versión más reciente de LTS (Long Term Support). Además, tenemos que utilizar `npm ci` para poder instalar el gestor de tareas, desde el que se ejecutarán los tests. No se utilizan versiones anteriores porque no soportan `npm ci`.
 
+A la hora de gestionar la caché en *Travis*, he consultado varias fuentes:
+- [Travis cache node_modules](https://stackoverflow.com/questions/42521884/should-i-have-travis-cache-node-modules-or-home-npm).
+- [Comando `npm ci`](https://docs.npmjs.com/cli/v6/commands/npm-ci).
+- [Caching node dependencies when using `npm ci`](https://medium.com/@mdsky1986/caching-node-dependencies-when-using-npm-ci-89fe3f46404a).
+
+Después de leer sobre cómo gestionar la caché con `npm ci` en *Travis*, he optado por modificar el fichero de configuración:
+
+```
+language: node_js
+node_js:
+- "node"
+- "lts/*"
+install:
+- npm ci
+cache:
+  directories:
+  - "$HOME/.npm"
+script:
+- grunt test
+
+```
+
+Esto acelerará la instalación manteniendo la caché de `npm`.
+
 ## Configuración de un sistema de integración continua adicional
 
 El segundo sistema que he elegido para realizar la integración continua ha sido [*CircleCI*](https://circleci.com/). Esto se debe a varios motivos. En primer lugar, se trata de un sistema en la nube en el que se puede utilizar la propia cuenta de *GitHub* para conectar los repositorios deseados. Además, al igual que con *Travis*, permite activar el *checks API*. Esto implica que se puede consultar desde el repositorio de *GitHub* el estado de la integración y el funcionamiento de los tests. De este modo, se puede consultar el *build* en cualquier momento sin tener que acceder a *CircleCI* directamente. Para añadir esto a mi repositorio he consultado [esta página](https://circleci.com/docs/2.0/enable-checks/).

@@ -4,5 +4,8 @@ node_js:
 - "lts/*"
 install:
 - npm ci
+cache:
+  directories:
+  - "$HOME/.npm"
 script:
 - grunt test
