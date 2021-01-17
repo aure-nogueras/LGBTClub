@@ -1,24 +1,28 @@
 entidad: 
-  - src/UserManagement/User.js
-  - src/UserManagement/UserController.js
-  - src/HistoricalEvent/HistoricalEvent.js
-  - src/HistoricalEvent/HistoricalEventController.js
-  - src/InfoAndExperiences/InfoAndExperiences.js
-  - src/InfoAndExperiences/InfoAndExperiencesController.js
+  - src/UserManagement/modelo/User.js
+  - src/UserManagement/modelo/UserController.js
+  - src/HistoricalEvent/modelo/HistoricalEvent.js
+  - src/HistoricalEvent/modelo/HistoricalEventController.js
+  - src/InfoAndExperiences/modelo/InfoAndExperiences.js
+  - src/InfoAndExperiences/modelo/InfoAndExperiencesController.js
 lenguaje: node_js
 test:
-  - src/UserManagement/testUser.js
-  - src/UserManagement/testUserController.js
-  - src/UserManagement/testUserMocha.js
-  - src/UserManagement/testUserControllerMocha.js
-  - src/HistoricalEvent/testHistoricalEvent.js
-  - src/HistoricalEvent/testHistoricalEventController.js
-  - src/HistoricalEvent/testHistoricalEventMocha.js
-  - src/HistoricalEvent/testHistoricalEventControllerMocha.js
-  - src/InfoAndExperiences/testInfoAndExperiences.js
-  - src/InfoAndExperiences/testInfoAndExperiencesController.js
-  - src/InfoAndExperiences/testInfoAndExperiencesMocha.js
-  - src/InfoAndExperiences/testInfoAndExperiencesControllerMocha.js
+  - src/UserManagement/test/testUser.js
+  - src/UserManagement/test/testUserController.js
+  - src/UserManagement/test/testUserMocha.js
+  - src/UserManagement/test/testUserControllerMocha.js
+  - src/UserManagement/test/testUserRutas.js
+  - src/HistoricalEvent/test/testHistoricalEvent.js
+  - src/HistoricalEvent/test/testHistoricalEventController.js
+  - src/HistoricalEvent/test/testHistoricalEventMocha.js
+  - src/HistoricalEvent/test/testHistoricalEventControllerMocha.js
+  - src/HistoricalEvent/test/testHistoricalEventRutas.js
+  - src/InfoAndExperiences/test/testInfoAndExperiences.js
+  - src/InfoAndExperiences/test/testInfoAndExperiencesController.js
+  - src/InfoAndExperiences/test/testInfoAndExperiencesMocha.js
+  - src/InfoAndExperiences/test/testInfoAndExperiencesControllerMocha.js
+  - src/InfoAndExperiences/test/testInfoAndExperiencesRutas.js
 fichero_tareas: 
   - Gruntfile.js
+make: grunt
 

@@ -48,4 +48,11 @@ module.exports = function(grunt) {
   // Default task(s).
   grunt.registerTask('test', ['mochaTest', 'run']);
   grunt.registerTask('lint', 'jshint');
+  grunt.registerTask('build', 'Tarea build', function(){
+  	grunt.log.writeln('Esta tarea tan solo devuelve un mensaje');
+  });
+  grunt.registerTask('run', 'Tarea run', function(){
+  	grunt.log.writeln('Esta tarea tan solo devuelve un mensaje');
+  });
+  
 };

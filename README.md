@@ -32,6 +32,8 @@ También se han comparado *Express* y *Meteor* realizando una prueba con cada fr
 
 ## Tests del API REST
 
+Para los tests se ha utilizado *Mocha* y la biblioteca *supertest*.
+
 ## Avance del proyecto
 
 Además de esto, he avanzado el proyecto en dos puntos:
