@@ -37,7 +37,7 @@ class UserController{
 	
 	// Eliminar a un usuario HU14
 	deleteUser(member){
-		let pos = this.usersList.indexOf(member);
+		let pos = this.findUser(member);
 		this.usersList.splice(member, 1);
 		member.setSubscription(false);
 	}
@@ -46,6 +46,19 @@ class UserController{
 	modifyUser(oldUser, newUser){
 		this.deleteUser(oldUser);
 		this.addUser(newUser);
+	}
+	
+	// Función auxiliar para el borrado
+	findUser(user){
+		var found = false;
+		var pos = -1;
+		for(var i=0; i<this.usersList.length && !found; i++){
+			if(JSON.stringify(this.usersList[i]) === JSON.stringify(user)){
+				found = true;
+				pos = i;
+			}
+		}
+		return pos;
 	}
 	
 	// Mandar información a los usuarios diariamente HU16

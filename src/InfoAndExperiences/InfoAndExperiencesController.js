@@ -23,8 +23,21 @@ class InfoAndExperiencesController{
 	
 	// Eliminar un término o experiencia HU11
 	deleteInfoAndExperiences(experience){
-		let pos = this.infoAndExperiences.indexOf(experience);
+		var pos = this.findInfoAndExperiences(experience);
 		this.infoAndExperiences.splice(pos, 1);
+	}
+	
+	// Función auxiliar para el borrado
+	findInfoAndExperiences(experience){
+		var found = false;
+		var pos = -1;
+		for(var i=0; i<this.infoAndExperiences.length && !found; i++){
+			if(JSON.stringify(this.infoAndExperiences[i]) === JSON.stringify(experience)){
+				found = true;
+				pos = i;
+			}
+		}
+		return pos;
 	}
 	
 	// Modificar la descripción de un término o experiencia HU12
