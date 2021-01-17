@@ -15,19 +15,9 @@ class UserController{
 		return this.usersList;
 	}
 	
-	// Comprobar si un usuario existe ya
-	isAdded(person){
-		var added = false;
-		let pos = this.usersList.indexOf(person);
-		if(pos != -1){
-			added = true;
-		}
-		return added;
-	}
-	
 	// Añadir a un usuario HU13
 	addUser(member){
-		if(!this.isAdded(member)){
+		if(this.findUser(member) === -1){
 			this.usersList.push(member);
 			member.setSubscription(true);
 		}else{
@@ -53,7 +43,7 @@ class UserController{
 		var found = false;
 		var pos = -1;
 		for(var i=0; i<this.usersList.length && !found; i++){
-			if(JSON.stringify(this.usersList[i]) === JSON.stringify(user)){
+			if(JSON.stringify(this.usersList[i].name) === JSON.stringify(user.name) && JSON.stringify(this.usersList[i].email) === JSON.stringify(user.email)){
 				found = true;
 				pos = i;
 			}

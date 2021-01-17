@@ -44,7 +44,7 @@ describe('UserController', function(){
 			var member = new user("Dylan", "lp_90@gmail.com", true);
 			var listUsers = new usersList();
 			listUsers.addUser(member);
-			assert.equal(listUsers.isAdded(member), true);
+			assert.equal(listUsers.findUser(member), "0");
 			assert.equal(member.getSubscription(), true);
 		});
 	});

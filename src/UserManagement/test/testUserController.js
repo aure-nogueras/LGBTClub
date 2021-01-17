@@ -12,10 +12,10 @@ var member2 = new user("Laura", "l_jimenez@gmail.com", false);
 var listUsers = new usersList();
 assert(listUsers, "Creado controlador");
 
-assert.equal(listUsers.isAdded(member), false);
+assert.equal(listUsers.findUser(member), "-1");
 listUsers.addUser(member);
 assert.equal(listUsers.getUsersList().length, "1");
-assert.equal(listUsers.isAdded(member), true);
+assert.equal(listUsers.findUser(member), "0");
 assert.equal(member.getSubscription(), true);
 
 listUsers.addUser(member2);
