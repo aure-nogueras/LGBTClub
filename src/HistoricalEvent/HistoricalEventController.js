@@ -28,7 +28,7 @@ class HistoricalEventController{
 	// Eliminar un evento histórico HU10
 	deleteHistoricalEvent(historicalEvent){
 		var pos = this.findHistoricalEvent(historicalEvent);
-		this.infoAndExperiences.splice(pos, 1);
+		this.historicalEventsList.splice(pos, 1);
 	}
 	
 	// Función auxiliar para el borrado
