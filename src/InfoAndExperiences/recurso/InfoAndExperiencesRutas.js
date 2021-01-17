@@ -28,6 +28,26 @@ app.post('/experiences', function (req, res) {
 	res.status(200).send(nueva_experiencia);
 });
 
+// Modifica la descripción de una experiencia HU12
+app.put('/experiences', function (req, res) {
+	var name = req.body.name;
+	var description = req.body.description;
+	var email = req.body.email;
+	var nueva_descripcion = req.body.new_description;
+	var nueva_experiencia = new info(name, description, email);
+	var mensaje;
+	if(controller.findInfoAndExperiences(nueva_experiencia) != -1){
+		mensaje = "Modificado con éxito\n";
+		logger.info("Modifica una experiencia");
+		res.status(200).send({mensaje});
+		controller.modifyInfoAndExperiences(nueva_experiencia, nueva_descripcion);
+	}else{
+		mensaje = "No existe esa experiencia\n";
+		logger.info("No modifica una experiencia porque no existe");
+		res.status(404).send({mensaje});
+	}
+});
+
 // Crea un término HU9
 app.post('/infos', function (req, res) {
 	var name = req.body.name;
@@ -38,6 +58,27 @@ app.post('/infos', function (req, res) {
 	logger.info("Crea un término");
 	res.status(200).send(nuevo_termino);
 });
+
+// Modifica la descripción de un término HU12
+app.put('/infos', function (req, res) {
+	var name = req.body.name;
+	var description = req.body.description;
+	var email = req.body.email;
+	var nueva_descripcion = req.body.new_description;
+	var nuevo_termino = new info(name, description, email);
+	var mensaje;
+	if(controller.findInfoAndExperiences(nuevo_termino) != -1){
+		mensaje = "Modificado con éxito\n";
+		logger.info("Modifica un término");
+		res.status(200).send({mensaje});
+		controller.modifyInfoAndExperiences(nuevo_termino, nueva_descripcion);
+	}else{
+		mensaje = "No existe ese término\n";
+		logger.info("No modifica un término porque no existe");
+		res.status(404).send({mensaje});
+	}
+});
+
 
 // Obtener todas las experiencias y términos
 app.get('/infoandexperiences', function (req, res) {

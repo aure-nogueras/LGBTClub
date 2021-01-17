@@ -32,6 +32,24 @@ describe('InfoAndExperiencesRutas', function(){
 		});
 	});
 	
+	// Modifica la descripción de una experiencia HU12
+	describe("PUT experiencia", function(){
+		it('Modifica la descripción de una experiencia', function(done){
+			var putData = 
+			{
+				"name": "Experiencia",
+				"description": "Soy lesbiana",
+				"email": "lisa@correo.es",
+				"new_description": "Soy bisexual",
+			};
+			request(app)
+				.put('/experiences')
+				.send(putData)
+				.expect('Content-Type',/json/)
+				.expect(200,done);
+		});
+	});
+
 	// Crea un término HU9
 	describe("POST info", function(){
 		it('Crea información sobre un término', function(done){
@@ -49,6 +67,24 @@ describe('InfoAndExperiencesRutas', function(){
 		});
 	});
 	
+	// Modifica la descripción de un término HU12
+	describe("PUT info", function(){
+		var putData = 
+			{
+				"name": "No binarie",
+				"description": "No identificarse como hombre ni como mujer",
+				"email": "rodri@correo.es",
+				"new_description": "No identificarse ni como hombre ni como mujer",
+			};
+		it('Modifica la descripción de un término', function(done){
+			request(app)
+				.put('/infos')
+				.send(putData)
+				.expect('Content-Type',/json/)
+				.expect(200,done);
+		});
+	});
+
 	// Obtiene todas las experiencias y términos
 	describe("GET todas las experiencias y términos", function(){
 		it('Obtiene todas las experiencias y términos', function(done){
@@ -59,5 +95,5 @@ describe('InfoAndExperiencesRutas', function(){
 				.expect(200,done);
 		});
 	});
-
+	
 });
