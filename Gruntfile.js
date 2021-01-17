@@ -51,7 +51,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', 'Tarea build', function(){
   	grunt.log.writeln('Esta tarea tan solo devuelve un mensaje');
   });
-  grunt.registerTask('run', 'Tarea run', function(){
+  grunt.registerTask('install', 'Tarea install', function(){
   	grunt.log.writeln('Esta tarea tan solo devuelve un mensaje');
   });
   
