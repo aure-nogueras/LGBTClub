@@ -30,7 +30,7 @@ describe('UserRutas', function(){
 				.expect(200,done);
 		});
 	});
-	
+		
 	// Obtener todos los usuarios
 	describe("GET todos los usuarios", function(){
 		it('Obtiene todos los usuarios', function(done){
@@ -42,4 +42,23 @@ describe('UserRutas', function(){
 		});
 	});
 
+	// Borra un usuario HU14
+	describe("DELETE usuario", function(){
+		it('Borra a un usuario', function(done){
+			request(app)
+				.delete('/users/Lisa%20Lara/lisa32@correo.es')
+				.expect('Content-Type',/json/)
+				.expect(200,done);
+		});
+	});
+
+	// No borra a un usuario porque no existe HU14
+	describe("DELETE usuario", function(){
+		it('Devuelve error al no encontrar al usuario', function(done){
+			request(app)
+				.delete('/users/Lisa%20Lara/lisa32@correo.es')
+				.expect('Content-Type',/json/)
+				.expect(404,done);
+		});
+	});
 });

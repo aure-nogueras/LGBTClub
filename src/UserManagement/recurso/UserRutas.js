@@ -29,6 +29,24 @@ app.post('/users', function (req, res) {
 	res.status(200).send(nuevo_usuario);
 });
 
+// Borra un usuario HU14
+app.delete('/users/:name/:email', function (req, res) {
+	var nuevo_usuario = new user(req.params.name, req.params.email, null);
+	var valor = (req.params.subscription == 'true');
+	var mensaje;
+	nuevo_usuario.setSubscription(valor);
+	if(controller.findUser(nuevo_usuario) != -1){
+		mensaje = "Borrado con éxito\n";
+		logger.info("Borra a un usuario");
+		res.status(200).send({mensaje});
+		controller.deleteUser(nuevo_usuario);
+	}else{
+		mensaje = "No existe ese usuario\n";
+		logger.info("No borra a un usuario porque no existe");
+		res.status(404).send(nuevo_usuario);
+	}
+});
+
 // Obtener todos los usuarios
 app.get('/users', function (req, res) {
 	logger.info("Obtiene la lista de todos");
