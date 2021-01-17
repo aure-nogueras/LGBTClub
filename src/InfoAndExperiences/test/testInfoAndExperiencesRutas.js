@@ -116,7 +116,7 @@ describe('InfoAndExperiencesRutas', function(){
 		});
 	});
 
-	// No borra un término HU11
+	// No borra un término al no encontrarlo HU11
 	describe("DELETE info", function(){
 		it('Devuelve error al no encontrar el término', function(done){
 			request(app)
@@ -126,7 +126,7 @@ describe('InfoAndExperiencesRutas', function(){
 		});
 	});
 
-	// No borra una experiencia HU11
+	// No borra una experiencia al no encontrarlo HU11
 	describe("DELETE experiencia", function(){
 		it('Devuelve error al no encontrar la experiencia', function(done){
 			request(app)
