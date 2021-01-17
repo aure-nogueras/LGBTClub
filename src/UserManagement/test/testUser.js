@@ -1,9 +1,9 @@
-var history = require("../HistoricalEvent/HistoricalEventController.js");
-var event = require("../HistoricalEvent/HistoricalEvent.js");
-var experience = require("../InfoAndExperiences/InfoAndExperiences.js");
-var info = require("../InfoAndExperiences/InfoAndExperiencesController.js");
-var usersList = require("./UserController.js");
-var user = require("./User.js"),
+var history = require("../../HistoricalEvent/modelo/HistoricalEventController.js");
+var event = require("../../HistoricalEvent/modelo/HistoricalEvent.js");
+var experience = require("../../InfoAndExperiences/modelo/InfoAndExperiences.js");
+var info = require("../../InfoAndExperiences/modelo/InfoAndExperiencesController.js");
+var usersList = require("../modelo/UserController.js");
+var user = require("../modelo/User.js"),
 assert = require("assert");
 
 var member = new user("Dylan", "lp_90@gmail.com", true);

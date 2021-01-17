@@ -1,4 +1,4 @@
-var event = require("./HistoricalEvent.js"),
+var event = require("../modelo/HistoricalEvent.js"),
 assert = require("assert");
 
 var historicalEvent = new event("Día del orgullo", 28, 6, 2020, "Día de celebración y reclamación de los derechos del colectivo", "");

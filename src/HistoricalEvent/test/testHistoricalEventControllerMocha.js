@@ -1,5 +1,5 @@
-var historicalEvent = require("./HistoricalEvent.js");
-var historyController = require("./HistoricalEventController.js"),
+var historicalEvent = require("../modelo/HistoricalEvent.js");
+var historyController = require("../modelo/HistoricalEventController.js"),
 assert = require("assert");
 
 describe('HistoricalEventController', function(){

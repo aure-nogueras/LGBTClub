@@ -1,4 +1,4 @@
-var event = require("./HistoricalEvent.js"),
+var event = require("../modelo/HistoricalEvent.js"),
 assert = require("assert");
 
 describe('HistoricalEvent', function(){

@@ -5,37 +5,38 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     'mochaTest': {
     	test: {
-    		src: ['./src/HistoricalEvent/testHistoricalEventControllerMocha.js', './src/HistoricalEvent/testHistoricalEventMocha.js', './src/InfoAndExperiences/testInfoAndExperiencesControllerMocha.js', './src/InfoAndExperiences/testInfoAndExperiencesMocha.js', './src/UserManagement/testUserMocha.js', './src/UserManagement/testUserControllerMocha.js'],
+    		src: ['./src/HistoricalEvent/test/testHistoricalEventControllerMocha.js', './src/HistoricalEvent/test/testHistoricalEventMocha.js', './src/InfoAndExperiences/test/testInfoAndExperiencesControllerMocha.js', './src/InfoAndExperiences/test/testInfoAndExperiencesMocha.js', './src/UserManagement/test/testUserMocha.js', './src/UserManagement/test/testUserControllerMocha.js'],
     	},
     },
     'run': {
     	testHistoricalEvent: {
     		cmd: 'node',
-		  	args: ['./src/HistoricalEvent/testHistoricalEvent.js'],
+		  	args: ['./src/HistoricalEvent/test/testHistoricalEvent.js'],
 		 },
 		 testHistoricalEventController: {
     		cmd: 'node',
-		  	args: ['./src/HistoricalEvent/testHistoricalEventController.js'], 
+		  	args: ['./src/HistoricalEvent/test/testHistoricalEventController.js'], 
 		 },
 		 testInfoAndExperiences: {
 		 		cmd: 'node',
-		 		args: ['./src/InfoAndExperiences/testInfoAndExperiences.js'],
+		 		args: ['./src/InfoAndExperiences/test/testInfoAndExperiences.js'],
 		 },
 		 testInfoAndExperiencesController: {
 		 		cmd: 'node',
-		 		args: ['./src/InfoAndExperiences/testInfoAndExperiencesController.js'],
+		 		args: ['./src/InfoAndExperiences/test/testInfoAndExperiencesController.js'],
 		 },
 		 testUser: {
 		 		cmd: 'node',
-		 		args: ['./src/UserManagement/testUser.js'],
+		 		args: ['./src/UserManagement/test/testUser.js'],
 		 },
 		 testUserController: {
 		 		cmd: 'node',
-		 		args: ['./src/UserManagement/testUserController.js'],
+		 		args: ['./src/UserManagement/test/testUserController.js'],
 		 },
 		},
 		'jshint': {
-			all: ['./src/UserManagement/*.js', './src/HistoricalEvent/*.js', './src/InfoAndExperiences/*.js'],
+			all: ['./src/UserManagement/modelo/*.js',
+			'./src/UserManagement/recurso/*.js', './src/UserManagement/test/*.js', './src/HistoricalEvent/modelo/*.js', './src/HistoricalEvent/recurso/*.js', './src/HistoricalEvent/test/*.js', './src/InfoAndExperiences/modelo/*.js', './src/InfoAndExperiences/recurso/*.js', './src/InfoAndExperiences/test/*.js'],
 		}
   });
 

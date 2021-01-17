@@ -1,5 +1,5 @@
-var info = require("./InfoAndExperiences.js");
-var infoController = require("./InfoAndExperiencesController.js"),
+var info = require("../modelo/InfoAndExperiences.js");
+var infoController = require("../modelo/InfoAndExperiencesController.js"),
 assert = require("assert");
 
 describe('InfoAndExperiencesController', function(){

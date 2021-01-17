@@ -26,6 +26,11 @@ Después de ver las características de cada framework, se ha considerado que la
 
 También se han comparado *Express* y *Meteor* realizando una prueba con cada framework. *Express* ya se había utilizado previamente, con lo que se ha creado un proyecto en *Meteor* para ver su funcionamiento siguiendo [este tutorial](https://www.codementor.io/@codeforgeek/rest-crud-operation-using-meteor-du10808m5). Las pruebas llevadas a cabo se encuentran [aquí](https://github.com/aure-nogueras/EjerciciosCC/tree/main/Tema5).
 
+## Diseño del API REST
+
+## Configuración distribuida y logs
+
+## Tests del API REST
 
 ## Avance del proyecto
 
@@ -53,6 +58,7 @@ La documentación se ubicará en el directorio [docs](https://github.com/aure-no
 - [Planificación del proyecto](https://aure-nogueras.github.io/LGTBClub/docs/planificacion).
 - [Configuración inicial del entorno para comenzar el desarrollo del proyecto](https://aure-nogueras.github.io/LGTBClub/docs/configuracion_entorno).
 - [Contenedores](https://aure-nogueras.github.io/LGTBClub/docs/contenedores).
+- [Integración continua](https://aure-nogueras.github.io/LGTBClub/docs/integracion_continua).
 - [Elección de herramientas](https://aure-nogueras.github.io/LGTBClub/docs/eleccion_herramientas).
 - [Descripción del problema](https://aure-nogueras.github.io/LGTBClub/docs/descripcion_problema).
 - [Creación de las primeras clases](https://aure-nogueras.github.io/LGTBClub/docs/primeras_clases).

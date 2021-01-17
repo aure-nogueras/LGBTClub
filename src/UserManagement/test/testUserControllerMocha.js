@@ -1,9 +1,9 @@
-var historyController = require("../HistoricalEvent/HistoricalEventController.js");
-var event = require("../HistoricalEvent/HistoricalEvent.js");
-var info = require("../InfoAndExperiences/InfoAndExperiences.js");
-var infoController = require("../InfoAndExperiences/InfoAndExperiencesController.js");
-var usersList = require("./UserController.js");
-var user = require("./User.js"),
+var historyController = require("../../HistoricalEvent/modelo/HistoricalEventController.js");
+var event = require("../../HistoricalEvent/modelo/HistoricalEvent.js");
+var info = require("../../InfoAndExperiences/modelo/InfoAndExperiences.js");
+var infoController = require("../../InfoAndExperiences/modelo/InfoAndExperiencesController.js");
+var usersList = require("../modelo/UserController.js");
+var user = require("../modelo/User.js"),
 assert = require("assert");
 
 describe('UserController', function(){

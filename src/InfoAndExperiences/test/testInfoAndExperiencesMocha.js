@@ -1,4 +1,4 @@
-var info = require("./InfoAndExperiences.js"),
+var info = require("../modelo/InfoAndExperiences.js"),
 assert = require("assert");
 
 describe('InfoAndExperiences', function(){

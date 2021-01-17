@@ -1,4 +1,4 @@
-var info = require("./InfoAndExperiences.js"),
+var info = require("../modelo/InfoAndExperiences.js"),
 assert = require("assert");
 
 var experience = new info("Trans", "Que no se identifica con el género asignado al nacer", "");

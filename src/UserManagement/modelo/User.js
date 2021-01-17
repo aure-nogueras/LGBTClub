@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
-var history = require("../HistoricalEvent/HistoricalEventController.js");
-var info = require("../InfoAndExperiences/InfoAndExperiencesController.js");
+var history = require("../../HistoricalEvent/modelo/HistoricalEventController.js");
+var info = require("../../InfoAndExperiences/modelo/InfoAndExperiencesController.js");
 
 // Clase User
 class User{
