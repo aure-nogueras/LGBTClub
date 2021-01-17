@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     'mochaTest': {
     	test: {
-    		src: ['./src/HistoricalEvent/test/testHistoricalEventControllerMocha.js', './src/HistoricalEvent/test/testHistoricalEventMocha.js', './src/InfoAndExperiences/test/testInfoAndExperiencesControllerMocha.js', './src/InfoAndExperiences/test/testInfoAndExperiencesMocha.js', './src/UserManagement/test/testUserMocha.js', './src/UserManagement/test/testUserControllerMocha.js'],
+    		src: ['./src/HistoricalEvent/test/testHistoricalEventControllerMocha.js', './src/HistoricalEvent/test/testHistoricalEventMocha.js', './src/HistoricalEvent/test/testHistoricalEventRutas.js', './src/InfoAndExperiences/test/testInfoAndExperiencesControllerMocha.js', './src/InfoAndExperiences/test/testInfoAndExperiencesMocha.js', './src/UserManagement/test/testUserMocha.js', './src/UserManagement/test/testUserControllerMocha.js'],
     	},
     },
     'run': {
