@@ -30,7 +30,29 @@ describe('UserRutas', function(){
 				.expect(200,done);
 		});
 	});
-		
+	
+	// Modifica los datos de un usuario HU15
+	describe("PUT usuario", function(){
+		var putData = 
+			{
+				"name": "Lisa",
+				"email": "lisa@correo.es",
+				"isLGTB": true,
+				"subscription": true,
+				"new_name": "Lisa Lara",
+				"new_email": "lisa32@correo.es",
+				"new_isLGTB": true,
+				"new_subscription": true
+			};
+		it('Modifica a un usuario', function(done){
+			request(app)
+				.put('/users')
+				.send(putData)
+				.expect('Content-Type',/json/)
+				.expect(200,done);
+		});
+	});
+	
 	// Obtener todos los usuarios
 	describe("GET todos los usuarios", function(){
 		it('Obtiene todos los usuarios', function(done){
