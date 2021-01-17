@@ -22,7 +22,6 @@ test:
   - src/InfoAndExperiences/test/testInfoAndExperiencesMocha.js
   - src/InfoAndExperiences/test/testInfoAndExperiencesControllerMocha.js
   - src/InfoAndExperiences/test/testInfoAndExperiencesRutas.js
-fichero_tareas: 
-  - Gruntfile.js
+fichero_tareas: Gruntfile.js
 make: grunt
 
