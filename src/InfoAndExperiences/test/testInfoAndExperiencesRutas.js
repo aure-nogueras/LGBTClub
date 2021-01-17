@@ -95,5 +95,44 @@ describe('InfoAndExperiencesRutas', function(){
 				.expect(200,done);
 		});
 	});
-	
+
+	// Borra un término HU11
+	describe("DELETE info", function(){
+		it('Borra información sobre un término', function(done){
+			request(app)
+				.delete('/infos/No%20binarie/No%20identificarse%20ni%20como%20hombre%20ni%20como%20mujer/rodri@correo.es')
+				.expect('Content-Type',/json/)
+				.expect(200,done);
+		});
+	});
+
+	// Borra una experiencia HU11
+	describe("DELETE experiencia", function(){
+		it('Borra información sobre una experiencia', function(done){
+			request(app)
+				.delete('/experiences/Experiencia/Soy%20bisexual/lisa@correo.es')
+				.expect('Content-Type',/json/)
+				.expect(200,done);
+		});
+	});
+
+	// No borra un término HU11
+	describe("DELETE info", function(){
+		it('Devuelve error al no encontrar el término', function(done){
+			request(app)
+				.delete('/infos/No%20binarie/No%20identificarse%20como%20hombre%20ni%20como%20mujer/rodri@correo.es')
+				.expect('Content-Type',/json/)
+				.expect(404,done);
+		});
+	});
+
+	// No borra una experiencia HU11
+	describe("DELETE experiencia", function(){
+		it('Devuelve error al no encontrar la experiencia', function(done){
+			request(app)
+				.delete('/experiences/Experiencia/Soy%20lesbiana/lisa@correo.es')
+				.expect('Content-Type',/json/)
+				.expect(404,done);
+		});
+	});
 });

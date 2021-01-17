@@ -48,6 +48,23 @@ app.put('/experiences', function (req, res) {
 	}
 });
 
+// Borra una experiencia HU11
+app.delete('/experiences/:name/:description/:email', function (req, res) {
+	var nueva_experiencia = new info(req.params.name, req.params.description, req.params.email);
+	var mensaje;
+	if(controller.findInfoAndExperiences(nueva_experiencia) != -1){
+		mensaje = "Borrado con éxito\n";
+		logger.info("Borra una experiencia");
+		res.status(200).send({mensaje});
+		controller.deleteInfoAndExperiences(nueva_experiencia);
+	}else{
+		mensaje = "No existe esa experiencia\n";
+		logger.info("No borra una experiencia porque no existe");
+		res.status(404).send({mensaje});
+	}
+});
+
+
 // Crea un término HU9
 app.post('/infos', function (req, res) {
 	var name = req.body.name;
@@ -79,6 +96,21 @@ app.put('/infos', function (req, res) {
 	}
 });
 
+// Borra un término HU11
+app.delete('/infos/:name/:description/:email', function (req, res) {
+	var nuevo_termino = new info(req.params.name, req.params.description, req.params.email);
+	var mensaje;
+	if(controller.findInfoAndExperiences(nuevo_termino) != -1){
+		mensaje = "Borrado con éxito\n";
+		logger.info("Borra un término");
+		res.status(200).send({mensaje});
+		controller.deleteInfoAndExperiences(nuevo_termino);
+	}else{
+		mensaje = "No existe ese término\n";
+		logger.info("No borra un término porque no existe");
+		res.status(404).send({mensaje});
+	}
+});
 
 // Obtener todas las experiencias y términos
 app.get('/infoandexperiences', function (req, res) {
