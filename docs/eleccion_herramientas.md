@@ -108,7 +108,7 @@ Este ha sido el resultado obtenido:
 
 ### Configuración remota
 
-Con respecto a la configuración remota, tras leer una [comparativa](https://stackshare.io/stackups/consul-vs-etcd-vs-zookeeper) entre *etcd*, *Zookeeper* y *Consul*, he optado por *Consul*. Esto se debe a que se trata de un servicio que dispone de un repositorio público en *GitHub* (al contrario que *ZooKeeper*) y cuenta con numerosas ventajas: monitorización, alta disponibilidad, integración con *Docker*... Muchas de estas características no están disponibles en las otras alternativas.
+Con respecto a la configuración remota, tras leer una [comparativa](https://stackshare.io/stackups/consul-vs-etcd-vs-zookeeper) entre *etcd*, *Zookeeper* y *Consul*, he optado por *etcd*. Esto se debe a que se trata de un servicio que dispone de un repositorio público en *GitHub* (al contrario que *ZooKeeper*) y cuenta con numerosas ventajas: tolerancia a fallos, código abierto, una gran comunidad... 
 
 ### Logging
 
