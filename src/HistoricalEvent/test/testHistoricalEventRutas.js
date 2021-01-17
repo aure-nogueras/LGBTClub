@@ -25,7 +25,7 @@ describe('HistoricalEventRutas', function(){
 				"year": "2020",
 				"description": "Celebracion",
 				"email": "lisa@correo.es"
-			}
+			};
 			request(app)
 				.post('/events')
 				.send(postData)
