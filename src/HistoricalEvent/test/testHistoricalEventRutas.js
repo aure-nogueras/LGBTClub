@@ -34,6 +34,17 @@ describe('HistoricalEventRutas', function(){
 		});
 	});
 
+	// Relacionado con HU10
+	describe("DELETE evento", function(){
+		it('Borra información sobre un evento', function(done){
+			request(app)
+				.delete('/events/Orgullo/28/6/2020/Celebracion/lisa@correo.es')
+				.set('Accept', 'application/json')
+				.expect('Content-Type',/json/)
+				.expect(200,done);
+		});
+	});
+
 	// Obtener todos los eventos
 	describe("GET todos los eventos", function(){
 		it('Obtiene todos los eventos', function(done){
@@ -45,4 +56,14 @@ describe('HistoricalEventRutas', function(){
 		});
 	});
 
+	// Relacionado con HU10
+	describe("DELETE evento", function(){
+		it('Devuelve error al no encontrar el evento', function(done){
+			request(app)
+				.delete('/events/Orgullo/28/6/2020/Celebracion/lisa@correo.es')
+				.set('Accept', 'application/json')
+				.expect('Content-Type',/json/)
+				.expect(404,done);
+		});
+	});
 });

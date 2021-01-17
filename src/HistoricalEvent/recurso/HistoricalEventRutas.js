@@ -39,4 +39,21 @@ app.post('/events', function (req, res) {
 	res.status(200).send(nuevo_evento);
 });
 
+// Borra un evento histórico HU10
+app.delete('/events/:name/:day/:month/:year/:description/:email', function (req, res) {
+	var nuevo_evento = new history(req.params.name, req.params.day, req.params.month, req.params.year, req.params.description, req.params.email);
+	var mensaje;
+	if(controller.findHistoricalEvent(nuevo_evento) != -1){
+		mensaje = "Borrado con éxito\n";
+		logger.info("Borra un evento histórico");
+		res.status(200).send({mensaje});
+		controller.deleteHistoricalEvent(nuevo_evento);
+	}else{
+		mensaje = "No existe ese evento\n";
+		logger.info("No borra un evento porque no existe");
+		res.status(404).send({mensaje});
+	}
+});
+
+
 module.exports = app;
