@@ -36,8 +36,6 @@ describe('UserRutas', function(){
 	describe("PUT usuario", function(){
 		var putData = 
 			{
-				"name": "Lisa",
-				"email": "lisa@correo.es",
 				"isLGTB": true,
 				"subscription": true,
 				"new_name": "Lisa Lara",
@@ -47,7 +45,7 @@ describe('UserRutas', function(){
 			};
 		it('Modifica a un usuario', function(done){
 			request(app)
-				.put('/users')
+				.put('/users/Lisa/lisa@correo.es')
 				.send(putData)
 				.expect('Content-Type',/json/)
 				.expect(200,done);

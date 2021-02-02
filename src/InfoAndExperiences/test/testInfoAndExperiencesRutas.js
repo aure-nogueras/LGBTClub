@@ -37,13 +37,10 @@ describe('InfoAndExperiencesRutas', function(){
 		it('Modifica la descripción de una experiencia', function(done){
 			var putData = 
 			{
-				"name": "Experiencia",
-				"description": "Soy lesbiana",
-				"email": "lisa@correo.es",
 				"new_description": "Soy bisexual",
 			};
 			request(app)
-				.put('/experiences')
+				.put('/experiences/Experiencia/Soy%20lesbiana/lisa@correo.es')
 				.send(putData)
 				.expect('Content-Type',/json/)
 				.expect(200,done);
@@ -71,14 +68,11 @@ describe('InfoAndExperiencesRutas', function(){
 	describe("PUT info", function(){
 		var putData = 
 			{
-				"name": "No binarie",
-				"description": "No identificarse como hombre ni como mujer",
-				"email": "rodri@correo.es",
 				"new_description": "No identificarse ni como hombre ni como mujer",
 			};
 		it('Modifica la descripción de un término', function(done){
 			request(app)
-				.put('/infos')
+				.put('/infos/No%20binarie/No%20identificarse%20como%20hombre%20ni%20como%20mujer/rodri@correo.es')
 				.send(putData)
 				.expect('Content-Type',/json/)
 				.expect(200,done);

@@ -29,10 +29,10 @@ app.post('/experiences', function (req, res) {
 });
 
 // Modifica la descripción de una experiencia HU12
-app.put('/experiences', function (req, res) {
-	var name = req.body.name;
-	var description = req.body.description;
-	var email = req.body.email;
+app.put('/experiences/:name/:description/:email', function (req, res) {
+	var name = req.params.name;
+	var description = req.params.description;
+	var email = req.params.email;
 	var nueva_descripcion = req.body.new_description;
 	var nueva_experiencia = new info(name, description, email);
 	var mensaje;
@@ -77,10 +77,10 @@ app.post('/infos', function (req, res) {
 });
 
 // Modifica la descripción de un término HU12
-app.put('/infos', function (req, res) {
-	var name = req.body.name;
-	var description = req.body.description;
-	var email = req.body.email;
+app.put('/infos/:name/:description/:email', function (req, res) {
+	var name = req.params.name;
+	var description = req.params.description;
+	var email = req.params.email;
 	var nueva_descripcion = req.body.new_description;
 	var nuevo_termino = new info(name, description, email);
 	var mensaje;

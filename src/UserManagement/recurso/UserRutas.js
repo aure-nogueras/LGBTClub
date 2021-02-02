@@ -49,8 +49,8 @@ app.delete('/users/:name/:email', function (req, res) {
 
 
 // Modifica los datos de un usuario HU15
-app.put('/users', function (req, res) {
-	var antiguo_usuario = new user(req.body.name, req.body.email, req.body.isLGTB);
+app.put('/users/:name/:email', function (req, res) {
+	var antiguo_usuario = new user(req.params.name, req.params.email, req.body.isLGTB);
 	antiguo_usuario.setSubscription(req.body.subscription);
 	var nuevo_usuario = new user(req.body.new_name, req.body.new_email, req.body.new_isLGTB);
 	nuevo_usuario.setSubscription(req.body.new_subscription);
