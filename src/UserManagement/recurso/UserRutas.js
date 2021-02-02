@@ -50,18 +50,10 @@ app.delete('/users/:name/:email', function (req, res) {
 
 // Modifica los datos de un usuario HU15
 app.put('/users', function (req, res) {
-	var name = req.body.name;
-	var email = req.body.email;
-	var isLGTB = req.body.isLGTB;
-	var subscription = req.body.subscription;
-	var new_name = req.body.new_name;
-	var new_email = req.body.new_email;
-	var new_isLGTB = req.body.new_isLGTB;
-	var new_subscription = req.body.new_subscription;
-	var antiguo_usuario = new user(name, email, isLGTB);
-	antiguo_usuario.setSubscription(subscription);
-	var nuevo_usuario = new user(new_name, new_email, new_isLGTB);
-	nuevo_usuario.setSubscription(new_subscription);
+	var antiguo_usuario = new user(req.body.name, req.body.email, req.body.isLGTB);
+	antiguo_usuario.setSubscription(req.body.subscription);
+	var nuevo_usuario = new user(req.body.new_name, req.body.new_email, req.body.new_isLGTB);
+	nuevo_usuario.setSubscription(req.body.new_subscription);
 	controller.modifyUser(antiguo_usuario, nuevo_usuario);
 	logger.info("Modifica los datos de un usuario");
 	res.status(200).send(nuevo_usuario);
