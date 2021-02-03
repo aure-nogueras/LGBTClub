@@ -1,1 +1,1 @@
-web: npm ci && npm install -g grunt-cli && grunt email
+web: npm install && npm install -g grunt-cli && grunt email
