@@ -1,1 +1,1 @@
-web: node src/main/worker.js
+web: grunt email

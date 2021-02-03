@@ -18,20 +18,24 @@ module.exports = function(grunt) {
 		  	args: ['./src/HistoricalEvent/test/testHistoricalEventController.js'], 
 		 },
 		 testInfoAndExperiences: {
-		 		cmd: 'node',
-		 		args: ['./src/InfoAndExperiences/test/testInfoAndExperiences.js'],
+		 	cmd: 'node',
+		 	args: ['./src/InfoAndExperiences/test/testInfoAndExperiences.js'],
 		 },
 		 testInfoAndExperiencesController: {
-		 		cmd: 'node',
-		 		args: ['./src/InfoAndExperiences/test/testInfoAndExperiencesController.js'],
+		 	cmd: 'node',
+		 	args: ['./src/InfoAndExperiences/test/testInfoAndExperiencesController.js'],
 		 },
 		 testUser: {
-		 		cmd: 'node',
-		 		args: ['./src/UserManagement/test/testUser.js'],
+		 	cmd: 'node',
+		 	args: ['./src/UserManagement/test/testUser.js'],
 		 },
 		 testUserController: {
-		 		cmd: 'node',
-		 		args: ['./src/UserManagement/test/testUserController.js'],
+		 	cmd: 'node',
+		 	args: ['./src/UserManagement/test/testUserController.js'],
+		 },
+		 email: {
+		 	cmd: 'node',
+		 	args: ['./src/main/mailController.js'],
 		 },
 		},
 		'jshint': {
@@ -44,9 +48,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-run');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-nodemailer');
 
   // Default task(s).
-  grunt.registerTask('test', ['mochaTest', 'run']);
+  grunt.registerTask('test', ['mochaTest', 'run:testHistoricalEvent', 'run:testHistoricalEventController', 'run:testInfoAndExperiences', 'run:testInfoAndExperiencesController', 'run:testUser', 'run:testUserController']);
+  grunt.registerTask('email', 'run:email');
   grunt.registerTask('lint', 'jshint');
   grunt.registerTask('build', 'Tarea build', function(){
   	grunt.log.writeln('Esta tarea tan solo devuelve un mensaje');
