@@ -17,7 +17,7 @@ var ip = null;
   	ip = process.env.IP_ADDRESS || '127.0.0.1';
   }
   if(port === null){
-  	port = process.env.PORT || '8080';
+  	port = process.env.PORT || '8081';
   }
   app.set('port', port);
   app.listen(app.get('port'), ip, function(){

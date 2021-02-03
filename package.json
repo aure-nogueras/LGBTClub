@@ -31,7 +31,6 @@
     "grunt-nodemailer": "^1.1.0",
     "grunt-run": "^0.8.1",
     "mocha": "^8.2.1",
-    "nodemailer": "^6.4.17",
     "supertest": "^6.1.1",
     "winston": "^3.3.3"
   }

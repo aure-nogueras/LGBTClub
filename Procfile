@@ -1,1 +1,1 @@
-web: grunt email
+web: grunt start
