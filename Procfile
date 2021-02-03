@@ -1,1 +1,1 @@
-web: npm install && grunt test
+web: grunt email
