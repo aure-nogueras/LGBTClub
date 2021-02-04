@@ -16,7 +16,7 @@ var connection = async function(){
 	if(port === null){
 		port = process.env.PORT || '8081';
 	}
-	await client.delete().all();
+	//await client.delete().all();
 	return {
 		port,
 		ip
