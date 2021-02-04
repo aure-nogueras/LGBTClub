@@ -8,7 +8,7 @@ const app = require("./HistoricalEventRutas.js");
 var port = null;
 var ip = null;
 
-(async () => {
+
   
   port = await client.get('PORT').string();
   ip = await client.get('IP').string();
@@ -26,7 +26,7 @@ var ip = null;
   });
   
   await client.delete().all();
-})();
+
 
 
 

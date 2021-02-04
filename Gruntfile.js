@@ -52,6 +52,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-run');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-nodemailer');
 
   // Default task(s).
   grunt.registerTask('test', ['mochaTest', 'run:testHistoricalEvent', 'run:testHistoricalEventController', 'run:testInfoAndExperiences', 'run:testInfoAndExperiencesController', 'run:testUser', 'run:testUserController']);
