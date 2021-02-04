@@ -23,6 +23,8 @@ var connection = async function(){
 	}
 }
 
+connection().then(val=>console.log(val)).catch(err => console.log(err));
+
 module.exports = {
 	connection: connection
 }

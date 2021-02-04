@@ -67,14 +67,12 @@ app.get('/users', function (req, res) {
 	res.status(200).send(controller.getUsersList());
 });
 
-var connection = config.connection;
-
-connection().then(val=>{
+config.connection().then(val=>{
 	app.listen(val.port, val.ip, function(){
 		console.log("El servidor se está ejecutando en " + val.ip + ":" + val.port);
   	});
 
-});
+}).catch(err => console.log(err));
 
 
 module.exports = app;
