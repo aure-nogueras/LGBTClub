@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  user:
+    container_name: user
+    build: 
+      context: .
+      dockerfile: user.Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - log
+    networks:
+      - red
+  event:
+    container_name: event
+    build: 
+      context: .
+      dockerfile: event.Dockerfile
+    ports:
+      - "8082:8082"
+    depends_on:
+      - log
+    networks:
+      - red    
+  info:
+    container_name: info
+    build: 
+      context: .
+      dockerfile: info.Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - log
+    networks:
+      - red
+  log:
+    container_name: log
+    image: bitnami/logstash:latest
+    env_file: ./log.env
+    networks:
+      - red
+
+networks:
+  red:
+    driver: bridge

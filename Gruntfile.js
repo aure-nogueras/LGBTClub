@@ -37,9 +37,17 @@ module.exports = function(grunt) {
 		 	cmd: 'node',
 		 	args: ['./src/main/mailController.js'],
 		 },
-		 start: {
+		 user: {
 		 	cmd: 'node',
 		 	args: ['./src/UserManagement/recurso/UserRutas.js'],
+		 },
+		 event: {
+		 	cmd: 'node',
+		 	args: ['./src/HistoricalEvent/recurso/HistoricalEventRutas.js'],
+		 },
+		 info: {
+		 	cmd: 'node',
+		 	args: ['./src/InfoAndExperiences/recurso/InfoAndExperiencesRutas.js'],
 		 }
 		},
 		'jshint': {
@@ -57,7 +65,9 @@ module.exports = function(grunt) {
   // Default task(s).
   grunt.registerTask('test', ['mochaTest', 'run:testHistoricalEvent', 'run:testHistoricalEventController', 'run:testInfoAndExperiences', 'run:testInfoAndExperiencesController', 'run:testUser', 'run:testUserController']);
   grunt.registerTask('email', 'run:email');
-  grunt.registerTask('start', 'run:start');
+  grunt.registerTask('user', 'run:user');
+  grunt.registerTask('event', 'run:event');
+  grunt.registerTask('info', 'run:info');
   grunt.registerTask('lint', 'jshint');
   grunt.registerTask('build', 'Tarea build', function(){
   	grunt.log.writeln('Esta tarea tan solo devuelve un mensaje');

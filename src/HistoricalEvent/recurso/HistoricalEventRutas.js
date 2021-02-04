@@ -14,7 +14,8 @@ var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 
-var config = require("./HistoricalEventPortConfig");
+const {Config} = require("./HistoricalEventPortConfig");
+const config = new Config;
 
 var history = require("../modelo/HistoricalEvent.js");
 var historyController = require("../modelo/HistoricalEventController.js");
@@ -56,13 +57,8 @@ app.delete('/events/:name/:day/:month/:year/:description/:email', function (req,
 	}
 });
 
-var connection = config.connection;
-
-connection().then(val=>{
-	app.listen(val.port, val.ip, function(){
-		console.log("El servidor se está ejecutando en " + val.ip + ":" + val.port);
-  	});
-
+app.listen(config.port, config.ip, function(){
+	console.log("El servidor se está ejecutando en " + config.ip + ":" + config.port);
 });
 
 module.exports = app;

@@ -17,7 +17,8 @@ var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 
-var config = require("./InfoAndExperiencesPortConfig");
+const {Config} = require("./InfoAndExperiencesPortConfig");
+const config = new Config;
 
 // Crea una experiencia HU9
 app.post('/experiences', function (req, res) {
@@ -122,11 +123,8 @@ app.get('/infoandexperiences', function (req, res) {
 
 var connection = config.connection;
 
-connection().then(val=>{
-	app.listen(val.port, val.ip, function(){
-		console.log("El servidor se está ejecutando en " + val.ip + ":" + val.port);
-  	});
-
+app.listen(config.port, config.ip, function(){
+	console.log("El servidor se está ejecutando en " + config.ip + ":" + config.port);
 });
 
 

@@ -1,30 +1,37 @@
 /*jshint esversion: 8 */
 
-const { Etcd3 } = require('etcd3');
-const client = new Etcd3();
-const express = require('express');
+const { config }  = require("dotenv").config();
+const config_prefix = 'lgtb';
 
-var port = null;
-var ip = null;
+class Config {
+  constructor() {
+    var self = this;
+    const consul = require('consul')();
+    self.ip = process.env.IP || '0.0.0.0';
+    self.port = process.env.PORT || 8081;
+    consul.agent.service.list(function(err, result) {
+      if (err) {
+        console.log( "Consul no está conectado" );
+      } else {
+        consul.kv.get( config_prefix + '/ip',
+                     function( err, result ) {
+                       if (result != undefined ) {
+                         self.ip = result.Value;
+                         console.log("Ip establecida en " + self.ip);
+                       }
+                     });
 
-var connection = async function(){
-	port = await client.get('PORT').string();
-	ip = await client.get('IP').string();
-	if(ip === null){
-		ip = process.env.IP_ADDRESS || '0.0.0.0';
-	}
-	if(port === null){
-		port = process.env.PORT || '8081';
-	}
-	await client.delete().all();
-	return {
-		port,
-		ip
-	}
+        consul.kv.get( config_prefix + '/port',
+                     function( err, result ) {
+                       if (result != undefined ) {
+                         self.port = result.Value;
+                         console.log("Puerto establecido en " + self.port);
+                       }
+                     });
+      }
+    });
+
+  }
 }
 
-connection().then(val=>console.log(val)).catch(err => console.log(err));
-
-module.exports = {
-	connection: connection
-}
+module.exports = { Config };
