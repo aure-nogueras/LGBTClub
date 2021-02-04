@@ -17,6 +17,8 @@ var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 
+var config = require("./UserRutasPortConfig");
+
 
 // Crea un usuario HU13
 app.post('/users', function (req, res) {
@@ -63,6 +65,15 @@ app.put('/users/:name/:email', function (req, res) {
 app.get('/users', function (req, res) {
 	logger.info("Obtiene la lista de todos");
 	res.status(200).send(controller.getUsersList());
+});
+
+var connection = config.connection;
+
+connection().then(val=>{
+	app.listen(val.port, val.ip, function(){
+		console.log("El servidor se está ejecutando en " + val.ip + ":" + val.port);
+  	});
+
 });
 
 

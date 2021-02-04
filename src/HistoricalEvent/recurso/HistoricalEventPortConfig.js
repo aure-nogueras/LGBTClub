@@ -8,25 +8,24 @@ const app = require("./HistoricalEventRutas.js");
 var port = null;
 var ip = null;
 
+var connection = async function(){
+	port = await client.get('PORT').string();
+	ip = await client.get('IP').string();
+	if(ip === null){
+		ip = process.env.IP_ADDRESS || '0.0.0.0';
+	}
+	if(port === null){
+		port = process.env.PORT || '8080';
+	}
+	await client.delete().all();
+	return {
+		port,
+		ip
+	}
+}
 
-  
-  port = await client.get('PORT').string();
-  ip = await client.get('IP').string();
-  
-  if(ip === null){
-  	ip = process.env.IP_ADDRESS || '127.0.0.1';
-  }
-  if(port === null){
-  	port = process.env.PORT || '8080';
-  }
-  app.set('port', port);
-  app.use(express.static(__dirname + '/public'));
-  app.listen(app.get('port'), ip, function(){
-	console.log("El servidor se está ejecutando en " + ip + ":" + app.get('port'));
-  });
-  
-  await client.delete().all();
-
-
+module.exports = {
+	connection: connection
+}
 
 

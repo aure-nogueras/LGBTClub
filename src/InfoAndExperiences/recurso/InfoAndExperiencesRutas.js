@@ -17,6 +17,8 @@ var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 
+var config = require("./InfoAndExperiencesPortConfig");
+
 // Crea una experiencia HU9
 app.post('/experiences', function (req, res) {
 	var name = req.body.name;
@@ -116,6 +118,15 @@ app.delete('/infos/:name/:description/:email', function (req, res) {
 app.get('/infoandexperiences', function (req, res) {
 	logger.info("Obtiene todos los términos y experiencias");
 	res.status(200).send(controller.getInfoAndExperiencesList());
+});
+
+var connection = config.connection;
+
+connection().then(val=>{
+	app.listen(val.port, val.ip, function(){
+		console.log("El servidor se está ejecutando en " + val.ip + ":" + val.port);
+  	});
+
 });
 
 

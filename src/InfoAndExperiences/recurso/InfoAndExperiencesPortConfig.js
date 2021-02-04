@@ -8,24 +8,25 @@ const app = require("./InfoAndExperiencesRutas.js");
 var port = null;
 var ip = null;
 
-(async () => {
-  
-  port = await client.get('PORT').string();
-  ip = await client.get('IP').string();
-  
-  if(ip === null){
-  	ip = process.env.IP_ADDRESS || '127.0.0.1';
-  }
-  if(port === null){
-  	port = process.env.PORT || '8081';
-  }
-  app.set('port', port);
-  app.listen(app.get('port'), ip, function(){
-	console.log("El servidor se está ejecutando en " + ip + ":" + app.get('port'));
-  });
-  
-  await client.delete().all();
-})();
+var connection = async function(){
+	port = await client.get('PORT').string();
+	ip = await client.get('IP').string();
+	if(ip === null){
+		ip = process.env.IP_ADDRESS || '0.0.0.0';
+	}
+	if(port === null){
+		port = process.env.PORT || '8082';
+	}
+	await client.delete().all();
+	return {
+		port,
+		ip
+	}
+}
+
+module.exports = {
+	connection: connection
+}
 
 
 
