@@ -1,19 +1,11 @@
 /*jshint esversion: 6 */
 
 const winston = require('winston');
-/*const logger = winston.createLogger({
+const logger = winston.createLogger({
     transports: [
         new winston.transports.Console()
     ]
 });
-*/
-const logger = require('winston-logstash-transport').createLogger(null, {
-  application: 'website-ssr-prod',
-  logstash: {port: 8089},
-  transports: [
-    new winston.transports.Console(),
-  ]
-})
 
 var user = require("../modelo/User.js");
 var userController = require("../modelo/UserController.js");

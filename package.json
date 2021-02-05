@@ -33,8 +33,7 @@
     "mocha": "^8.2.1",
     "nodemailer": "^6.4.17",
     "supertest": "^6.1.1",
-    "winston": "^3.3.3",
-    "winston-logstash-transport": "^2.0.0"
+    "winston": "^3.3.3"
   },
   "devDependencies": {}
 }
