@@ -22,5 +22,5 @@ EXPOSE 8082
 COPY src/HistoricalEvent ./src/HistoricalEvent
 COPY Gruntfile.js ./
 
-# Ejecuta grunt para los tests
+# Ejecuta grunt 
 CMD grunt event

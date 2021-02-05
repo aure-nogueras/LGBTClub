@@ -22,5 +22,5 @@ EXPOSE 8080
 COPY src/InfoAndExperiences ./src/InfoAndExperiences
 COPY Gruntfile.js ./
 
-# Ejecuta grunt para los tests
+# Ejecuta grunt 
 CMD grunt info

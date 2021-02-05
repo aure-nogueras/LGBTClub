@@ -22,5 +22,5 @@ EXPOSE 8081
 COPY src ./src
 COPY Gruntfile.js ./
 
-# Ejecuta grunt para los tests
+# Ejecuta grunt 
 CMD grunt user
