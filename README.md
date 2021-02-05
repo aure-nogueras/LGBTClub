@@ -38,7 +38,7 @@ Para ejecutar el fichero, se pueden usar `docker-compose build` y `docker-compos
 
 ![Peticiones a los microservicios](./docs/imgs/peticiones.png "Peticiones a los microservicios")
 
-Si miramos la terminal donde se está ejecutando `docker-compose up`, vemos que las peticiones se reciben:
+Si miramos la terminal donde se está ejecutando `docker-compose up`, vemos que las peticiones se reciben adecuadamente:
 
 ![Peticiones recibidas con docker-compose](./docs/imgs/compose.png "Peticiones recibidas con docker-compose")
 
