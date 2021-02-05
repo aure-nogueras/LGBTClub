@@ -8,14 +8,25 @@ La descripción del problema se puede consultar [aquí](https://aure-nogueras.gi
 
 ## Estructura del clúster
 
+Se han construido cuatro contenedores:
+
+- user: contiene el microservicio relativo a los usuarios, *UserManagement*. 
+- info: contiene el microservicio relativo al módulo *InfoAndExperiences*. 
+- event: contiene el microservicio de *HistoricalEvent*. 
+- log: este contenedor se ha incluido para los logs usando *Logstash*. 
+
+Los contenedores relativos a los microservicios permiten desplegarlos en diferentes puertos para que estén activos al mismo tiempo. Por otro lado, los logs son útiles para registrar qué ocurre en cada momento. Son un servicio de configuración necesario para usar junto con los microservicios.
+
 ## Configuración de cada uno de los contenedores
+
+
 
 ## Fichero de composición
 
 ## Testeo del fichero de composición
 
 ## Avance del proyecto
-
+consul, heroku
 
 
 ## Documentación
